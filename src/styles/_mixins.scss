@@ -1,0 +1,12 @@
+@use "variables" as *;
+@use "colors" as *;
+@use "functions" as *;
+
+@mixin icon($name, $color : $color-base-primary){
+    &::before{
+        font-family: 'secura-insurance-icons';
+        content: $name;
+        color: $color;
+        font-size: toRem($font-size-icon);
+    }
+}

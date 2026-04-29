@@ -1,0 +1,28 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+    min-height: 100vh;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    width: auto;
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+ul{
+    list-style: none;
+}
