@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { ProximasRenovaciones } from './pages/proximas-renovaciones/proximas-renovaciones';
-import { DetallePoliza } from './pages/detalle-poliza/detalle-poliza';
-import { PagNoEncontrada } from './pages/pag-no-encontrada/pag-no-encontrada';
+import { Home } from './features/home/views/home/home';
+import { ProximasRenovaciones } from './features/proximas-renovaciones/views/proximas-renovaciones/proximas-renovaciones';
+import { DetallePoliza } from './features/detalle-poliza/views/detalle-poliza/detalle-poliza';
+import { PagNoEncontrada } from './features/pag-no-encontrada/views/pag-no-encontrada/pag-no-encontrada';
 
 
 export const routes: Routes = [

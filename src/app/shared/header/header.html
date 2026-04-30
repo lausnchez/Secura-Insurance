@@ -1,21 +1,36 @@
 <header class="header">
+
     <nav class="header__navBar">
-        <a class="header__navBar__logo" routerLink="/inicio">
-            <img src="/assets/images/secura-insurance_logo.png" alt="Secura Insurance Logo">
-        </a>
+        <div class="header__navBar__logo">
+            <a routerLink="/inicio">
+                <img src="/assets/images/secura-insurance_logo.png" alt="Secura Insurance Logo">
+            </a>
+        </div>
         <div class="header__navBar__links">
-            <a class="header__navBar__a" routerLink='/inicio'>Inicio</a>
-            <a class="header__navBar__a" routerLink='/proximas-renovaciones'>Próximas renovaciones</a>
+            <a i18n class="header__navBar__a" routerLink='/inicio'>Inicio</a>
+            <a i18n class="header__navBar__a" routerLink='/proximas-renovaciones'>Próximas renovaciones</a>
         </div>
     </nav>
-    <div class="header__submenus">
-        <button>
+
+    <div class="header-desktop__submenus">
+        <button class="header__submenus__button">
             <span class="icon-clock"></span>
-            <span>Mi perfil</span>
+            <span i18n>Mi perfil</span>
         </button>
-        <button>
+        <button class="header__submenus__button">
             <span class="icon-clock"></span>
-            <span>Lenguajes</span>
+            <span i18n>Lenguajes</span>
+        </button>
+    </div>
+    <div class="header-mobile__submenus">
+        <button class="header__submenus__button">
+            <span class="icon-user"></span>
+        </button>
+        <button class="header__submenus__button">
+            <span class="icon-burger_menu"></span>
+        </button>
+        <button class="header__submenus__button">
+            <span class="icon-close"></span>
         </button>
     </div>
 </header>

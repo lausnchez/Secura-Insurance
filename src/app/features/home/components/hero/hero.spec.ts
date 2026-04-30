@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderDesplegables } from './header-desplegables';
+import { Hero } from './hero';
 
-describe('HeaderDesplegables', () => {
-  let component: HeaderDesplegables;
-  let fixture: ComponentFixture<HeaderDesplegables>;
+describe('Hero', () => {
+  let component: Hero;
+  let fixture: ComponentFixture<Hero>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderDesplegables]
+      imports: [Hero]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HeaderDesplegables);
+    fixture = TestBed.createComponent(Hero);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

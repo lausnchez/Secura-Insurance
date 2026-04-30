@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7478013149023291266" datatype="html">
+        <source>¿Necesitas ayuda?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/footer/footer.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6879169033731329939" datatype="html">
+        <source>Política de cookies</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/footer/footer.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1237719952930399466" datatype="html">
+        <source>Aviso legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/footer/footer.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8349761136793440516" datatype="html">
+        <source>Política de privacidad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/footer/footer.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1926157928707021468" datatype="html">
+        <source>Inicio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5817002699361605941" datatype="html">
+        <source>Próximas renovaciones</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="771879419236270848" datatype="html">
+        <source>Mi perfil</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3873574663888667958" datatype="html">
+        <source>Lenguajes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/header/header.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

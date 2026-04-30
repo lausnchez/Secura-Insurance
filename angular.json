@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "Secura-Insurance": {
+      "i18n":{
+        "sourceLocale": "es",
+        "locales":{
+          "en":"src/locale/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +23,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "localize": ["es"],
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -47,7 +54,10 @@
             },
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "polyfills": [
+              "@angular/localize/init"
+            ]
           },
           "configurations": {
             "production": {
@@ -112,6 +122,9 @@
             "styles": [
               "src/styles.scss",
               "src/assets/icons/icomoon/style.css"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           }
         }
