@@ -1,7 +1,4 @@
-@use 'styles/colors' as *;
-@use 'styles/font-mixins' as *;
-@use 'styles/functions' as *;
-@use 'styles/variables' as *;
+@use "styles/index" as *;
 
 // Variables
 $header-padding-x: $spacing-16;

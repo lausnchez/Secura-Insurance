@@ -1,7 +1,5 @@
-@use 'styles/colors' as *;
-@use 'styles/functions' as *;
-@use 'styles/font-mixins' as *;
-@use 'styles/variables' as *;
+@use "styles/index" as *;
+
 
 // Variables
 $footer-padding-x: $spacing-88;
@@ -12,6 +10,7 @@ $footer-principal-containers-gap: $spacing-12;
 $footer-navBar-y-padding: $spacing-16;
 $footer-info-y-padding: $spacing-16;
 $footer-navBar-nav-gap: $spacing-24;
+$footer-border-top-width: toRem(1px);
 
 $footer-background-color: $color-background-default;
 $footer-border-top-color: $color-border-default;
@@ -24,7 +23,7 @@ $footer-navBar-links-color: $color-text-subtitle;
     height: fit-content;
     max-width: 100%;
 
-    border-top: 1px solid black;
+    border-top: $footer-border-top-width solid $footer-border-top-color;
     background-color: $footer-background-color;
     padding: $footer-padding-y $footer-padding-x;
     
@@ -86,10 +85,21 @@ $footer-navBar-links-color: $color-text-subtitle;
         @include small($footer-navBar-links-color);
     }
 
+    .footer__navBar__link:not(:last-child)::after {
+        content: "|";
+        margin-left: $footer-navBar-nav-gap;
+    }
+
     span{
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: $footer-span-gap;
+    }
+
+    // MOBILE
+    @include mobile(){
+        display: flex;
+        flex-direction: column;
     }
 }

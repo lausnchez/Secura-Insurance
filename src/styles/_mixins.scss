@@ -10,3 +10,92 @@
         font-size: toRem($font-size-icon);
     }
 }
+
+@mixin displayFlex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+/* Font Mixins */
+/* -------------------------------------------------------*/
+@mixin title($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-bold;
+    font-size: toRem($font-size-title);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
+
+@mixin header2($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-bold;
+    font-size: toRem($font-size-header2);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
+
+@mixin header3($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-semibold;
+    font-size: toRem($font-size-header3);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
+
+@mixin subtitle($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-regular;
+    font-size: toRem($font-size-subtitle);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
+
+@mixin body($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-regular;
+    font-size: toRem($font-size-body);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
+
+@mixin bodyBold($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-bold;
+    font-size: toRem($font-size-body-bold);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
+
+@mixin small($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-medium;
+    font-size: toRem($font-size-small);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
+
+@mixin smallTitle($color: $color-text-subtitle){
+    font-family: $font-family-default;
+    font-weight: $font-weight-bold;
+    font-size: toRem($font-size-title-small);
+    letter-spacing: $font-letter-spacing-default;
+    color: $color;
+    
+    // @include mobilexl{}
+}
