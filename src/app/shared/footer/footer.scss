@@ -83,6 +83,10 @@ $footer-mobile-navBar-nav-padding-y: $spacing-16;
         @include body($footer-navBar-links-color);
     }
 
+    .footer__navBar__copyright .icon-Copyright{
+         @include small();
+    }
+
     // padding: $footer-padding-y $footer-padding-x;
     
     // display: grid;
