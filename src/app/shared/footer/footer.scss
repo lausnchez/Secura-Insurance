@@ -79,12 +79,61 @@ $footer-mobile-navBar-nav-padding-y: $spacing-16;
         padding: $footer-mobile-navBar-nav-padding-y 0px;
     }
 
+    .footer__navBar nav span{
+        display: none;
+    }
+
     .footer__navBar__link, .footer__navBar__copyright{
         @include body($footer-navBar-links-color);
     }
 
     .footer__navBar__copyright .icon-Copyright{
          @include small();
+    }
+
+    @include desktop(){
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "contactInfo companyInfo"
+            "navBar navBar"; 
+        align-items: center;
+        padding: $footer-desktop-padding-y $footer-desktop-padding-x;
+            
+        // Info
+        .footer__companyInfo, .footer__contactInfo{
+            @include displayFlex(column, center, start);
+            gap: $footer-desktop-principal-containers-gap;
+            padding: $footer-desktop-info-y-padding 0px;
+            height: auto;
+        } 
+        
+        // NavBar
+        .footer__navBar{
+            @include displayFlex();
+            grid-area: navBar;
+            padding: $footer-desktop-navBar-y-padding 0px;
+        }
+
+        .footer__navBar nav{
+            @include displayFlex($justify:start);
+            gap: $footer-desktop-navBar-nav-gap;
+        }
+
+        .footer__navBar nav span{
+            display: block;
+            color: $color-border-border300;
+        }
+
+        .footer__navBar__link, .footer__navBar__copyright{
+            @include small($footer-navBar-links-color);
+        }
+
+        span{
+            @include displayFlex($justify:start);
+            gap: $footer-desktop-span-gap;
+        }
     }
 
     // padding: $footer-padding-y $footer-padding-x;

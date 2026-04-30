@@ -1,16 +1,16 @@
 // Variables
-$mobile-max: 576px;
+$mobile-breakpoint: 767px;
 
 
 // Mixins
 @mixin mobile{
-    @media (max-width: $mobile-max) {
+    @media (max-width: $mobile-breakpoint) {
         @content;
     }
 }
 
 @mixin desktop{
-    @media (min-width: $mobile-max) {
+    @media (min-width: $mobile-breakpoint) {
         @content;
     }
 }
