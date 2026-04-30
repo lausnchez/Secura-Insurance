@@ -1,52 +1,63 @@
 @use "styles/index" as *;
 
-
-// Variables
-$footer-padding-x: $spacing-88;
-$footer-padding-y: $spacing-16;
-$footer-span-gap: $spacing-8;
-$footer-border-top-width: toRem(1px);
-$footer-principal-containers-gap: $spacing-12;
-$footer-navBar-y-padding: $spacing-16;
-$footer-info-y-padding: $spacing-16;
-$footer-navBar-nav-gap: $spacing-24;
-$footer-border-top-width: toRem(1px);
-
 $footer-background-color: $color-background-default;
 $footer-border-top-color: $color-border-default;
 $footer-span-icons-color: $color-base-primary;
 $footer-span-color: $color-text-subtitle;
 $footer-navBar-links-color: $color-text-subtitle;
 
+$footer-border-top-width: toRem(1px);
+
+
+// Variables especificas de desktop
+
+$footer-desktop-padding-x: $spacing-88;
+$footer-desktop-padding-y: $spacing-16;
+$footer-desktop-span-gap: $spacing-8;
+$footer-desktop-principal-containers-gap: $spacing-12;
+$footer-desktop-navBar-y-padding: $spacing-16;
+$footer-desktop-info-y-padding: $spacing-16;
+$footer-desktop-navBar-nav-gap: $spacing-24;
+$footer-desktop-border-top-width: toRem(1px);
+
+// Variables especificas de mobile
+$footer-mobile-padding-left: $spacing-16;
+$footer-mobile-padding-right: $spacing-88;
+$footer-mobile-padding-y: $spacing-20;
+$footer-mobile-gap: $spacing-16;
+$footer-mobile-principal-container-gap: $spacing-12;
+$footer-mobile-contact-info-height: toRem(126px);
+$footer-mobile-navBar-nav-gap: $spacing-24;
+$footer-mobile-navBar-nav-padding-y: $spacing-16;
+
 // Styles
+// -----------------------------------------------------------------------
 .footer{
+    @include displayFlex($direction: column, $align: start);
     height: fit-content;
     max-width: 100%;
-
     border-top: $footer-border-top-width solid $footer-border-top-color;
     background-color: $footer-background-color;
-    padding: $footer-padding-y $footer-padding-x;
-    
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-        "contactInfo companyInfo"
-        "navBar navBar";
+    padding: 
+        $footer-mobile-padding-y
+        $footer-mobile-padding-right
+        $footer-mobile-padding-y
+        $footer-mobile-padding-left;
+    gap: $footer-mobile-gap;
 
     // Info
     .footer__companyInfo, .footer__contactInfo{
         @include displayFlex(column, center, start);
-        gap: $footer-principal-containers-gap;
-        padding: $footer-info-y-padding 0px;
-    }   
-
-    .footer__contactInfo{   
-        grid-area: contactInfo;
+        gap: $footer-mobile-principal-container-gap;
     }
-    
+
     .footer__companyInfo{
         grid-area: companyInfo;
+    }
+    
+    .footer__contactInfo{
+        grid-area: contactInfo;
+        height: $footer-mobile-contact-info-height;
     }
 
     .footer__contactInfo [class^="icon-"] {
@@ -62,35 +73,76 @@ $footer-navBar-links-color: $color-text-subtitle;
         @include bodyBold($color-base-primary);
     }
 
-    // NavBar
-    .footer__navBar{
-        @include displayFlex();
-        grid-area: navBar;
-        padding: $footer-navBar-y-padding 0px;
-    }
-
     .footer__navBar nav{
-        @include displayFlex($justify:start);
-        gap: $footer-navBar-nav-gap;
+        @include displayFlex(column, space-between, start);
+        gap: $footer-mobile-navBar-nav-gap;
+        padding: $footer-mobile-navBar-nav-padding-y 0px;
     }
 
     .footer__navBar__link, .footer__navBar__copyright{
-        @include small($footer-navBar-links-color);
+        @include body($footer-navBar-links-color);
     }
 
-    .footer__navBar__link:not(:last-child)::after {
-        content: "|";
-        margin-left: $footer-navBar-nav-gap;
-    }
+    // padding: $footer-padding-y $footer-padding-x;
+    
+    // display: grid;
+    // grid-template-columns: 1fr auto;
+    // grid-template-rows: auto auto;
+    // grid-template-areas: 
+    //     "contactInfo companyInfo"
+    //     "navBar navBar";
 
-    span{
-        @include displayFlex($justify:start);
-        gap: $footer-span-gap;
-    }
+    // // Info
+    // .footer__companyInfo, .footer__contactInfo{
+    //     @include displayFlex(column, center, start);
+    //     gap: $footer-principal-containers-gap;
+    //     padding: $footer-info-y-padding 0px;
+    // }   
 
-    // MOBILE
-    @include mobile(){
-        display: flex;
-        flex-direction: column;
-    }
+    // .footer__contactInfo{   
+    //     grid-area: contactInfo;
+    // }
+    
+    // .footer__companyInfo{
+    //     grid-area: companyInfo;
+    // }
+
+    // .footer__contactInfo [class^="icon-"] {
+    //     color: $footer-span-icons-color;
+    // }
+
+    // .footer__contactInfo:not([class^="icon-"]),
+    // .footer__companyInfo:not([class^="icon-"]){
+    //     @include body($footer-span-color);
+    // }
+
+    // .footer__contactInfo__title{
+    //     @include bodyBold($color-base-primary);
+    // }
+
+    // // NavBar
+    // .footer__navBar{
+    //     @include displayFlex();
+    //     grid-area: navBar;
+    //     padding: $footer-navBar-y-padding 0px;
+    // }
+
+    // .footer__navBar nav{
+    //     @include displayFlex($justify:start);
+    //     gap: $footer-navBar-nav-gap;
+    // }
+
+    // .footer__navBar__link, .footer__navBar__copyright{
+    //     @include small($footer-navBar-links-color);
+    // }
+
+    // .footer__navBar__link:not(:last-child)::after {
+    //     content: "|";
+    //     margin-left: $footer-navBar-nav-gap;
+    // }
+
+    // span{
+    //     @include displayFlex($justify:start);
+    //     gap: $footer-span-gap;
+    // }
 }
