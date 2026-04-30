@@ -36,10 +36,7 @@ $footer-navBar-links-color: $color-text-subtitle;
 
     // Info
     .footer__companyInfo, .footer__contactInfo{
-        display: flex;
-        flex-direction: column;
-        text-align: start;
-        justify-content: center;
+        @include displayFlex(column, center, start);
         gap: $footer-principal-containers-gap;
         padding: $footer-info-y-padding 0px;
     }   
@@ -67,18 +64,14 @@ $footer-navBar-links-color: $color-text-subtitle;
 
     // NavBar
     .footer__navBar{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include displayFlex();
         grid-area: navBar;
         padding: $footer-navBar-y-padding 0px;
     }
 
     .footer__navBar nav{
-        display: flex;
-        flex-direction: row;
+        @include displayFlex($justify:start);
         gap: $footer-navBar-nav-gap;
-        align-items: center;
     }
 
     .footer__navBar__link, .footer__navBar__copyright{
@@ -91,9 +84,7 @@ $footer-navBar-links-color: $color-text-subtitle;
     }
 
     span{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        @include displayFlex($justify:start);
         gap: $footer-span-gap;
     }
 

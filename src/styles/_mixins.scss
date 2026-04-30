@@ -11,7 +11,7 @@
     }
 }
 
-@mixin displayFlex($direction, $justify, $align){
+@mixin displayFlex($direction: row, $justify: space-between, $align: center){
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
