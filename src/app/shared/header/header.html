@@ -1,15 +1,21 @@
-<header>
-    <nav>
-        <div>
+<header class="header">
+    <nav class="header__navBar">
+        <a class="header__navBar__logo" routerLink="/inicio">
             <img src="/assets/images/secura-insurance_logo.png" alt="Secura Insurance Logo">
-        </div>
-        <div>
-            <a href="">Inicio</a>
-            <a href="">Próximas renovaciones</a>
+        </a>
+        <div class="header__navBar__links">
+            <a class="header__navBar__a" routerLink='/inicio'>Inicio</a>
+            <a class="header__navBar__a" routerLink='/proximas-renovaciones'>Próximas renovaciones</a>
         </div>
     </nav>
-    <div>
-        <button>Mi perfil</button>
-        <button>Lenguaje</button>
+    <div class="header__submenus">
+        <button>
+            <span class="icon-clock"></span>
+            <span>Mi perfil</span>
+        </button>
+        <button>
+            <span class="icon-clock"></span>
+            <span>Lenguajes</span>
+        </button>
     </div>
 </header>
