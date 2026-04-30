@@ -1,0 +1,95 @@
+@use 'styles/colors' as *;
+@use 'styles/functions' as *;
+@use 'styles/font-mixins' as *;
+@use 'styles/variables' as *;
+
+// Variables
+$footer-padding-x: $spacing-88;
+$footer-padding-y: $spacing-16;
+$footer-span-gap: $spacing-8;
+$footer-border-top-width: toRem(1px);
+$footer-principal-containers-gap: $spacing-12;
+$footer-navBar-y-padding: $spacing-16;
+$footer-info-y-padding: $spacing-16;
+$footer-navBar-nav-gap: $spacing-24;
+
+$footer-background-color: $color-background-default;
+$footer-border-top-color: $color-border-default;
+$footer-span-icons-color: $color-base-primary;
+$footer-span-color: $color-text-subtitle;
+$footer-navBar-links-color: $color-text-subtitle;
+
+// Styles
+.footer{
+    height: fit-content;
+    max-width: 100%;
+
+    border-top: 1px solid black;
+    background-color: $footer-background-color;
+    padding: $footer-padding-y $footer-padding-x;
+    
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "contactInfo companyInfo"
+        "navBar navBar";
+
+    // Info
+    .footer__companyInfo, .footer__contactInfo{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        justify-content: center;
+        gap: $footer-principal-containers-gap;
+        padding: $footer-info-y-padding 0px;
+    }   
+
+    .footer__contactInfo{   
+        grid-area: contactInfo;
+    }
+    
+    .footer__companyInfo{
+        grid-area: companyInfo;
+    }
+
+    .footer__contactInfo [class^="icon-"] {
+        color: $footer-span-icons-color;
+    }
+
+    .footer__contactInfo:not([class^="icon-"]),
+    .footer__companyInfo:not([class^="icon-"]){
+        @include body($footer-span-color);
+    }
+
+    .footer__contactInfo__title{
+        @include bodyBold($color-base-primary);
+    }
+
+    // NavBar
+    .footer__navBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        grid-area: navBar;
+        padding: $footer-navBar-y-padding 0px;
+    }
+
+    .footer__navBar nav{
+        display: flex;
+        flex-direction: row;
+        gap: $footer-navBar-nav-gap;
+        align-items: center;
+    }
+
+    .footer__navBar__link, .footer__navBar__copyright{
+        @include small($footer-navBar-links-color);
+    }
+
+    span{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: $footer-span-gap;
+    }
+}

@@ -1,18 +1,19 @@
 @use 'styles/colors' as *;
 @use 'styles/font-mixins' as *;
 @use 'styles/functions' as *;
+@use 'styles/variables' as *;
 
 // Variables
-$header-padding-x: toRem(16px);
-$header-padding-y: toRem(88px);
+$header-padding-x: $spacing-16;
+$header-padding-y: $spacing-88;
 $header-height: toRem(64px);
 $header-background-color: $color-background-default;
 
-$header__navBar-gap: toRem(32px);
-$header__navBar__links-gap: toRem(32px);
+$header__navBar-gap: $spacing-32;
+$header__navBar__links-gap: $spacing-32;
 $header__logo-width: toRem(88px);
 
-$header__submenus__gap: toRem(32px);
+$header__submenus__gap: $spacing-32;
 
 // Styles
 .header{
