@@ -1,0 +1,13 @@
+@use 'styles/index' as *;
+
+$home__contents-padding-x: $spacing-24;
+$home__contents-padding-top: $spacing-40;
+$home__contents-padding-bottom: $spacing-80;
+
+.home__contents{
+    padding: 
+        $home__contents-padding-top
+        $home__contents-padding-x
+        $home__contents-padding-bottom
+        $home__contents-padding-x;
+}
