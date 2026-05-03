@@ -1,10 +1,17 @@
 @use 'styles/index' as *;
 
+
+// Mobile
 $home-hero-text-color: white;
 $home-hero-height: 496px;
 $home-hero-contents-gap: $spacing-40;
 $home-hero-text-padding: $spacing-40;
 $color-hero-translucent-background: rgba(0, 0, 0, 0.5);
+
+// Desktop
+$home-hero-desktop-contents-width: 700px;
+$home-hero-desktop-contents-gap: 40px;
+$home-hero-desktop-contents-padding: 40px;
 
 .home__hero{
     @include displayFlex(column, center, center);
@@ -35,5 +42,29 @@ $color-hero-translucent-background: rgba(0, 0, 0, 0.5);
     .home__hero__title, .home__hero__subtitle{
         padding-left: $home-hero-text-padding;
         padding-right: $home-hero-text-padding;
+    }
+
+    @include desktop(){
+         .home__heroContents{
+            @include displayFlex(column, center, center);
+            width: $home-hero-desktop-contents-width;
+            gap: $home-hero-desktop-contents-gap;
+            text-align: center;
+
+            padding-top: $home-hero-desktop-contents-padding;
+            padding-bottom: $home-hero-desktop-contents-padding;
+        }
+
+        .home__hero__title, .home__hero__subtitle{
+            padding: 0px;
+        }
+
+        .home__hero__title{
+            @include title($home-hero-text-color);
+        }
+
+        .home__hero__subtitle{
+            @include subtitle($home-hero-text-color);
+        }
     }
 }
