@@ -26,6 +26,7 @@
     font-size: toRem($font-size-title);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    line-height: $font-line-height-default;
     
     // @include mobilexl{}
 }
@@ -36,6 +37,7 @@
     font-size: toRem($font-size-header2);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    line-height: $font-line-height-default;
     
     // @include mobilexl{}
 }
@@ -46,6 +48,7 @@
     font-size: toRem($font-size-header3);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    line-height: $font-line-height-default;
     
     // @include mobilexl{}
 }
@@ -56,6 +59,7 @@
     font-size: toRem($font-size-subtitle);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    line-height: $font-line-height-default;
     
     // @include mobilexl{}
 }
@@ -66,6 +70,7 @@
     font-size: toRem($font-size-body);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    height: $font-line-height-default;
     
     // @include mobilexl{}
 }
@@ -76,6 +81,7 @@
     font-size: toRem($font-size-body-bold);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    line-height: $font-line-height-default;
     
     // @include mobilexl{}
 }
@@ -86,6 +92,7 @@
     font-size: toRem($font-size-small);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    line-height: $font-line-height-default;
     
     // @include mobilexl{}
 }
@@ -96,6 +103,7 @@
     font-size: toRem($font-size-title-small);
     letter-spacing: $font-letter-spacing-default;
     color: $color;
+    line-height: $font-line-height-default;
     
     // @include mobilexl{}
 }

@@ -1,0 +1,39 @@
+@use 'styles/index' as *;
+
+$home-hero-text-color: white;
+$home-hero-height: 496px;
+$home-hero-contents-gap: $spacing-40;
+$home-hero-text-padding: $spacing-40;
+$color-hero-translucent-background: rgba(0, 0, 0, 0.5);
+
+.home__hero{
+    @include displayFlex(column, center, center);
+    // background-image: url('/assets/images/hero-cover.jpg');
+    background: 
+        linear-gradient(
+            $color-hero-translucent-background,
+            $color-hero-translucent-background),
+        url("/assets/images/hero-cover.jpg");
+    background-size: cover;
+    background-position: center;
+    height: $home-hero-height;
+    
+    .home__heroContents{
+        @include displayFlex(column, center, center);
+        gap: $home-hero-contents-gap;
+        text-align: center;
+    }
+
+    .home__hero__title{
+        @include header2($home-hero-text-color);
+    }
+
+    .home__hero__subtitle{
+        @include subtitle($home-hero-text-color);
+    }
+
+    .home__hero__title, .home__hero__subtitle{
+        padding-left: $home-hero-text-padding;
+        padding-right: $home-hero-text-padding;
+    }
+}

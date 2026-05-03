@@ -20,39 +20,51 @@ $header-mobile-padding-y: $spacing-8;
 
 
 // Styles
-.header{
+.header {
+
     background-color: $header-background-color;
     max-width: 100%;
     padding: $header-mobile-padding-x $header-mobile-padding-y;
 
-    .header__navBar__logo{
+    .header__navBar__logo {
         width: $header-logo-width;
     }
 
-    .header__navBar{
-        @include displayFlex($justify:start);
+    nav.header__navBar {
+        @include displayFlex($justify: start);
+        width: 50%;
+        gap:32px; 
     }
 
-    .header-desktop__submenus{
+    .header-desktop__submenus {
         display: none;
     }
 
-    
 
 
-    @include desktop(){
-        .header-desktop__submenus{
-            display: block;
-        } 
-         
-        .header-mobile__submenus{
+
+    @include desktop() {
+        @include displayFlex(row, space-between, center);
+
+        padding: 16px 88px 16px 88px; // TODO: REFACTOR TO PROJECT CONVENTION
+        
+
+        .header-desktop__submenus {
+            @include displayFlex($justify: end);
+
+            // display: block;
+            width: 50%;
+        }
+
+        .header-mobile__submenus {
             display: none;
         }
 
-        .header__navBar__a{
+        .header__navBar__a {
             @include bodyBold();
         }
     }
+
     // @include desktop(){
     //     @include displayFlex();
     //     max-height: $header-desktop-height;
@@ -78,11 +90,12 @@ $header-mobile-padding-y: $spacing-8;
     // }
 
     // // Componentes secundarios
-    // .header__navBar__links{
-    //     @include displayFlex();
-    //     gap: $header__navBar__links-gap;
-    // }
-    
+    .header__navBar__links{
+        @include displayFlex();
+        // gap: $header__navBar__links-gap;
+        gap:$header-desktop-navBar__links-gap;
+    }
+
     // .header__navBar__logo{
     //     max-width: $header__logo-width
     // }

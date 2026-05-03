@@ -7,24 +7,47 @@
             </a>
         </div>
         <div class="header__navBar__links">
-            <a i18n class="header__navBar__a" routerLink='/inicio'>Inicio</a>
-            <a i18n class="header__navBar__a" routerLink='/proximas-renovaciones'>Próximas renovaciones</a>
+            <a i18n class="header__navBar__a" routerLink='/inicio' mat-button>Inicio</a>
+            <a i18n class="header__navBar__a" routerLink='/proximas-renovaciones' mat-button>Próximas renovaciones</a>
         </div>
     </nav>
 
+    <!-- SUBMENÚS DESKTOP -->
     <div class="header-desktop__submenus">
-        <button class="header__submenus__button">
-            <span class="icon-clock"></span>
+
+        <!-- MI PERFIL -->
+        <button mat-button [matMenuTriggerFor]="menuPerfil" class="header__submenus__button">
+            <span class="icon-user"></span>
             <span i18n>Mi perfil</span>
+            <span class="icon-arrow-dropdown"></span>
         </button>
-        <button class="header__submenus__button">
-            <span class="icon-clock"></span>
+
+        <mat-menu #menuPerfil="matMenu">
+            <button mat-menu-item>Ver perfil</button>
+            <button mat-menu-item>Configuración</button>
+            <button mat-menu-item>Cerrar sesión</button>
+        </mat-menu>
+
+        <!-- LENGUAJES -->
+        <button mat-button [matMenuTriggerFor]="menuLenguajes" class="header__submenus__button">
+            <span class="icon-globe"></span>
             <span i18n>Lenguajes</span>
+            <span class="icon-arrow-dropdown"></span>
         </button>
+
+        <mat-menu #menuLenguajes="matMenu">
+            <button mat-menu-item (click)="changeLang('es')">Español</button>
+            <button mat-menu-item (click)="changeLang('en')">English</button>
+            <button mat-menu-item (click)="changeLang('fr')">Français</button>
+        </mat-menu>
+
     </div>
+
+    <!-- SUBMENÚS MOBILE (sin cambios por ahora) -->
     <div class="header-mobile__submenus">
         <button class="header__submenus__button">
-            <span class="icon-user"></span>
+            <!-- <span class="icon-user"></span> -->
+             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
         </button>
         <button class="header__submenus__button">
             <span class="icon-burger_menu"></span>
@@ -33,4 +56,6 @@
             <span class="icon-close"></span>
         </button>
     </div>
+
 </header>
+
