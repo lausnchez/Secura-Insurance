@@ -3,15 +3,15 @@
 
 // Mobile
 $home-hero-text-color: white;
-$home-hero-height: 496px;
+$home-hero-height: toRem(496px);
 $home-hero-contents-gap: $spacing-40;
 $home-hero-text-padding: $spacing-40;
 $color-hero-translucent-background: rgba(0, 0, 0, 0.5);
 
 // Desktop
-$home-hero-desktop-contents-width: 700px;
-$home-hero-desktop-contents-gap: 40px;
-$home-hero-desktop-contents-padding: 40px;
+$home-hero-desktop-contents-width: toRem(700px);
+$home-hero-desktop-contents-gap: toRem(40px);
+$home-hero-desktop-contents-padding: toRem(40px);
 
 .home__hero{
     @include displayFlex(column, center, center);

@@ -1,0 +1,25 @@
+@use 'styles/index' as *;
+
+$btn-general-padding-x: toRem(16px);
+$btn-general-padding-y: toRem(10px);
+$btn-general-border-radius: toRem(8px);
+
+.btn-general{
+    @include body($color-text-information-text);
+    padding: $btn-general-padding-y $btn-general-padding-x;
+    border-radius: $btn-general-border-radius;
+    border: none;
+      
+    &.white{
+        background-color: white;
+        border: 1px solid $color-base-primary-50;
+    }
+    
+    &.basic{
+        background-color: $color-base-primary-25;
+    }
+
+    &:hover{
+        background-color: $color-base-primary-75;
+    }    
+}
