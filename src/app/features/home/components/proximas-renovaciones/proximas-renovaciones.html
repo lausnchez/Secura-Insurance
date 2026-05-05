@@ -1,4 +1,19 @@
 <section class="home-proximasRenovaciones">
     <h2>Próximas renovaciones</h2>
-    <app-btn-general textContent="Ver todos"></app-btn-general>
+    <div class="home-proximasRenovaciones__table">
+        <div class="home-proximasRenovaciones__tableHeader">
+            <span>No. de póliza</span>
+            <span>Nombre del riesgo</span>
+            <span>Fecha de contrato</span>
+            <span>Fecha de vencimiento</span>
+            <span>Importe</span>
+            <span>Estado de póliza</span>
+        </div>
+        <div class="home-proximasRenovaciones__tableContents">
+            @for (poliza of homeData(); track poliza.policyNumber){
+                <app-poliza-row [poliza]="poliza"></app-poliza-row>
+            }
+        </div>
+    </div>
+    <app-btn-general textContent="Ver todos" routerLink="proximas-renovaciones"></app-btn-general>
 </section>

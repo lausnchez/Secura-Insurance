@@ -1,0 +1,47 @@
+@use 'styles/index' as *;
+
+$home-pr-gap: toRem(24px);
+$home-pr-min-height: toRem(711px);
+
+$home-pr-table-gap: toRem(24px);
+$home-pr-tableContents-padding-x: toRem(16px);
+$home-pr-tableContents-padding-y: toRem(5px);
+
+$home-table-header-columns : 6;
+$home-table-header-gap: $spacing-16;
+$home-pr-tableHeader-padding-x: toRem(16px);
+$home-pr-tableHeader-padding-y: toRem(5px);
+
+.home-proximasRenovaciones{
+    @include displayFlex(column, start, start);
+    gap: $home-pr-gap;
+    min-height: $home-pr-min-height;
+}
+
+.home-proximasRenovaciones__table{
+    @include displayFlex(column);
+    width: 100%;
+    gap: $home-pr-gap;
+}
+
+.home-proximasRenovaciones__tableContents{
+    @include displayFlex(column, flex-start, stretch);
+    gap: $home-pr-table-gap;
+    width: 100%;
+    padding: $home-pr-tableContents-padding-y $home-pr-tableContents-padding-x;
+}
+
+.home-proximasRenovaciones__tableHeader{
+    // @include displayFlex(row, space-between, center);
+    display: grid;
+    grid-template-columns: repeat($home-table-header-columns, 1fr);
+    gap: $home-table-header-gap;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid $color-border-border300;
+    padding: $home-pr-tableHeader-padding-y $home-pr-tableHeader-padding-x;
+
+    span{
+        @include body($color-text-subtitle);
+    }
+}

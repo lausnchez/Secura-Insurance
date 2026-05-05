@@ -1,0 +1,44 @@
+{
+    "renovations": [
+        {
+            "policyNumber": 3454,
+            "name": "Hyundai Ioniq",
+            "contractDate": "05/05/2025",
+            "endDate": "05/05/2027",
+            "amount": 30203.76,
+            "state": "pending"
+        },
+        {
+            "policyNumber": 34654,
+            "name": "Hyundai Ioniq 2",
+            "contractDate": "01/02/2022",
+            "endDate": "01/02/2025",
+            "amount": 303.76,
+            "state": "paid"
+        },
+        {
+            "policyNumber": 3455464,
+            "name": "Hyundai Ioniq 3",
+            "contractDate": "08/03/2026",
+            "endDate": "08/03/2028",
+            "amount": 3021.90,
+            "state": "paid"
+        }
+    ],
+    "clients": [
+        {
+            "name": "José",
+            "surname": "Rodriguez",
+            "product": "Seguro de moto",
+            "email": "jose.rod@gmail.com",
+            "phone": "+34 587 394 393"
+        },
+        {
+            "name": "María",
+            "surname": "García",
+            "product": "Seguro de coche",
+            "email": "maria.garcia@gmail.com",
+            "phone": "+34 689 123 456"
+        }
+    ]
+}

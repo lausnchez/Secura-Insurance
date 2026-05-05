@@ -1,0 +1,69 @@
+@use 'styles/index' as *;
+
+$poliza-row-padding-x: toRem(16px);
+$poliza-row-padding-y: toRem(24px);
+$poliza-row-gap: toRem(24px);
+
+$poliza-row-shadow-color: #3746491A;
+$poliza-row-border-radius: toRem(8px);
+$poliza-row-text-color: black;
+
+$poliza-row-state-padding-x: toRem(8px);
+$poliza-row-state-padding-y: toRem(2px);
+$poliza-row-state-radius: toRem(4px);
+
+$poliza-row-pending: #FFE74F66;
+$poliza-row-pending-text: $color-text-subtitle;
+$poliza-row-expired: #DB39001F;
+$poliza-row-expired-text: #B22E00;
+$poliza-row-paid: #57AE6026;
+$poliza-row-paid-text: #397A3F;
+
+
+:host{
+    display: block;
+    width: 100%;
+}
+
+.poliza-row{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    
+    width: 100%;
+    padding: $poliza-row-padding-y $poliza-row-padding-x;
+    gap: $poliza-row-gap;
+    box-sizing: border-box;
+    border-radius: $poliza-row-border-radius;
+    background-color: white;
+    box-shadow: 0px 6px 16px 0px $poliza-row-shadow-color;
+    
+    span{
+        @include body($poliza-row-text-color);
+    }
+
+    .poliza-row__importe{
+        @include bodyBold($poliza-row-text-color);
+    }
+
+    // Tags
+    .poliza-row__estado{
+        padding: $poliza-row-state-padding-y $poliza-row-state-padding-x;
+        width: fit-content;
+        border-radius: $poliza-row-state-radius;
+    }
+
+    .poliza-row__estado--pending{
+        @include body($poliza-row-pending-text);
+        background-color: $poliza-row-pending;
+    }
+
+    .poliza-row__estado--paid{
+        @include body($poliza-row-paid-text);
+        background-color: $poliza-row-paid;
+    }
+
+    .poliza-row__estado--expired{
+        @include body($poliza-row-expired-text);
+        background-color: $poliza-row-expired;
+    }
+}

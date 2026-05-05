@@ -1,0 +1,12 @@
+<div class="poliza-row" ngClass="estado">
+    <span class="poliza-row__no-poliza">{{poliza.policyNumber}}</span>
+    <span class="poliza-row__no-riesgo">{{poliza.name}}</span>
+    <span class="poliza-row__fecha-contrato">{{poliza.contractDate | date:'dd/MM/yyyy'}}</span>
+    <span class="poliza-row__fecha-vencimiento">{{poliza.endDate | date:'dd/MM/yyyy'}}</span>
+    <span class="poliza-row__importe">{{poliza.amount | currency:'EUR'}}</span>
+    <span [ngClass]="{
+        'poliza-row__estado--pending': poliza.state == 'pending',
+        'poliza-row__estado--paid': poliza.state == 'paid',
+        'poliza-row__estado--expired': poliza.state == 'expired',
+    }" class="poliza-row__estado" appPolizaRowTag>{{poliza.state}}</span>
+</div>

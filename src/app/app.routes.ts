@@ -1,30 +1,9 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import { Home } from './features/home/views/home/home';
-import { ProximasRenovaciones } from './features/proximas-renovaciones/views/proximas-renovaciones/proximas-renovaciones';
-import { DetallePoliza } from './features/detalle-poliza/views/detalle-poliza/detalle-poliza';
-import { PagNoEncontrada } from './features/pag-no-encontrada/views/pag-no-encontrada/pag-no-encontrada';
-
 
 export const routes: Routes = [
-    {
-        path:'inicio',
-        component: Home,
-    },
-    {
-        path:'proximas-renovaciones',
-        component: ProximasRenovaciones,
-    },
-    {
-        path:'detalle-poliza',
-        component: DetallePoliza,
-    },
-    {
-        path:'',
-        component: Home,
-    },
-    {
-        path:'**',
-        component: PagNoEncontrada,
-    }
+    {path:'inicio', loadComponent: () => import('./features/home/views/home/home').then(m => m.Home)},
+    {path:'proximas-renovaciones', loadComponent: () => import('./features/proximas-renovaciones/views/proximas-renovaciones/proximas-renovaciones').then(m => m.ProximasRenovaciones)},
+    {path:'detalle-poliza', loadComponent: () => import('./features/detalle-poliza/views/detalle-poliza/detalle-poliza').then(m => m.DetallePoliza)},
+    {path:'', loadComponent: () => import('./features/home/views/home/home').then(m => m.Home)},
+    {path:'**', loadComponent: () => import('./features/pag-no-encontrada/views/pag-no-encontrada/pag-no-encontrada').then(m => m.PagNoEncontrada)}
 ];
