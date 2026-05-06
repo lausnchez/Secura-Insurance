@@ -51,12 +51,14 @@ $clientes-potenciales-pInfo-padding-y: toRem(14px);
        flex-grow: 1; 
     }
 
-    .clientes-potenciales-card__header a{
+    .clientes-potenciales-card__header button{
         flex-grow: 0;
         padding: 
             $clientes-potenciales-card-header-trash-button-padding-x 
             $clientes-potenciales-card-header-trash-button-padding-y;
         border-radius: $clientes-potenciales-card-header-trash-button-border-radius;
+        border: none;
+        background-color: transparent;
         &:hover{
             text-decoration: none;
             background-color: $clientes-potenciales-card-header-trash-button;

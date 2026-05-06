@@ -3,8 +3,13 @@
 $home__contents-padding-x: $spacing-24;
 $home__contents-padding-top: $spacing-40;
 $home__contents-padding-bottom: $spacing-80;
+$home__contents-gap: toRem(40px);
 
 .home__contents{
+    @include displayFlex(column, space-between, start);
+    gap: $home__contents-gap;
+    box-sizing: border-box;
+    width: 100%;
     padding: 
         $home__contents-padding-top
         $home__contents-padding-x

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Cliente } from '../../../../core/models/client.model';
 
 @Component({
@@ -9,4 +9,10 @@ import { Cliente } from '../../../../core/models/client.model';
 })
 export class ClientesPotencialesCard {
   @Input() client!:Cliente;
+  @Output() deleteEmitter = new EventEmitter<Cliente>;
+
+  deleteClient(){
+    console.log("child");
+    this.deleteEmitter.emit(this.client);
+  }
 }

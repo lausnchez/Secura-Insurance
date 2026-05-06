@@ -1,7 +1,7 @@
 <div class="clientes-potenciales-card">
     <div class="clientes-potenciales-card__header">
         <span class="clientes-potenciales-card-name">{{client.name}} {{client.surname}}</span>
-        <a href=""><span class="icon-trash-alt"></span></a>
+        <button (click)="deleteClient()"><span class="icon-trash-alt"></span></button>
         <span class="clientes-potenciales-card-product">Producto a ofrecer: {{client.product}}</span>
     </div>
     <div class="clientes-potenciales-card__personalData">

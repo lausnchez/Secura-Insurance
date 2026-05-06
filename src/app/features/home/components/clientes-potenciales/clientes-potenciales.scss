@@ -14,7 +14,7 @@ $home-cp-contents-grid-gap: $spacing-20;
 
 .home-clientesPotenciales__contents{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto auto;
     gap: $home-cp-contents-grid-gap;
     width: 100%;
 }

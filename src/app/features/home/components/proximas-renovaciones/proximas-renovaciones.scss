@@ -1,11 +1,11 @@
 @use 'styles/index' as *;
 
 $home-pr-gap: toRem(24px);
-$home-pr-min-height: toRem(711px);
 
 $home-pr-table-gap: toRem(24px);
-$home-pr-tableContents-padding-x: toRem(16px);
-$home-pr-tableContents-padding-y: toRem(5px);
+
+// $home-pr-tableContents-padding-x: toRem(16px);
+// $home-pr-tableContents-padding-y: toRem(5px);
 
 $home-table-header-columns : 6;
 $home-table-header-gap: $spacing-16;
@@ -15,7 +15,6 @@ $home-pr-tableHeader-padding-y: toRem(5px);
 .home-proximasRenovaciones{
     @include displayFlex(column, start, start);
     gap: $home-pr-gap;
-    min-height: $home-pr-min-height;
 }
 
 .home-proximasRenovaciones__table{
@@ -28,7 +27,6 @@ $home-pr-tableHeader-padding-y: toRem(5px);
     @include displayFlex(column, flex-start, stretch);
     gap: $home-pr-table-gap;
     width: 100%;
-    padding: $home-pr-tableContents-padding-y $home-pr-tableContents-padding-x;
 }
 
 .home-proximasRenovaciones__tableHeader{
