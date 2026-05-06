@@ -1,4 +1,37 @@
 <div class="poliza-row" ngClass="estado">
+    <div>
+        <span class="poliza-row-title">No. de póliza</span>
+        <span class="poliza-row__no-poliza">{{poliza.policyNumber}}</span>
+    </div>
+    <div>
+        <span class="poliza-row-title">Nombre del riesgo</span>
+        <span class="poliza-row__no-riesgo">{{poliza.name}}</span>
+    </div>
+    <div>
+        <span class="poliza-row-title">Fecha de contrato</span>
+        <span class="poliza-row__fecha-contrato">{{poliza.contractDate | date:'dd/MM/yyyy'}}</span>
+    </div>
+    <div>
+        <span class="poliza-row-title">Fecha de vencimiento</span>
+        <span class="poliza-row__fecha-vencimiento">{{poliza.endDate | date:'dd/MM/yyyy'}}</span>
+    </div>
+    <div>
+        <span class="poliza-row-title">Importe</span>
+        <span class="poliza-row__importe">{{poliza.amount | currency:'EUR'}}</span>
+    </div>
+    <div>
+        <span class="poliza-row-title">Estado</span>
+        <span [ngClass]="{
+            'poliza-row__estado--pending': poliza.state == 'pending',
+            'poliza-row__estado--paid': poliza.state == 'paid',
+            'poliza-row__estado--expired': poliza.state == 'expired',
+        }" class="poliza-row__estado" appPolizaRowTag>{{poliza.state}}</span>
+    </div>
+</div>
+
+
+
+<!-- <div class="poliza-row" ngClass="estado">
     <span class="poliza-row__no-poliza">{{poliza.policyNumber}}</span>
     <span class="poliza-row__no-riesgo">{{poliza.name}}</span>
     <span class="poliza-row__fecha-contrato">{{poliza.contractDate | date:'dd/MM/yyyy'}}</span>
@@ -9,4 +42,4 @@
         'poliza-row__estado--paid': poliza.state == 'paid',
         'poliza-row__estado--expired': poliza.state == 'expired',
     }" class="poliza-row__estado" appPolizaRowTag>{{poliza.state}}</span>
-</div>
+</div> -->

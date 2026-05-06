@@ -6,13 +6,17 @@ $home__contents-padding-bottom: $spacing-80;
 $home__contents-gap: toRem(40px);
 
 .home__contents{
-    @include displayFlex(column, space-between, start);
+    @include displayFlex(column, center, stretch);
     gap: $home__contents-gap;
     box-sizing: border-box;
     width: 100%;
     padding: 
-        $home__contents-padding-top
-        $home__contents-padding-x
-        $home__contents-padding-bottom
-        $home__contents-padding-x;
+    $home__contents-padding-top
+    $home__contents-padding-x
+    $home__contents-padding-bottom
+    $home__contents-padding-x;
+    
+    @include desktop(){
+        @include displayFlex(column, start, stretch);
+    }
 }

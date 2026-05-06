@@ -3,9 +3,15 @@
 $home-cp-gap: toRem(32px);
 $home-cp-contents-grid-gap: $spacing-20;
 
+:host{
+    display: block;
+    width: 100%;
+}
+
 .home-clientesPotenciales{
     @include displayFlex(column, start, start);
     gap: $home-cp-gap;
+    width: 100%;
 }
 
 .home-clientesPotenciales h2{
@@ -13,8 +19,14 @@ $home-cp-contents-grid-gap: $spacing-20;
 }
 
 .home-clientesPotenciales__contents{
-    display: grid;
-    grid-template-columns: auto auto;
+    @include displayFlex(column, space-between, stretch);
     gap: $home-cp-contents-grid-gap;
     width: 100%;
+
+
+    @include desktop(){
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;      
+    }
 }

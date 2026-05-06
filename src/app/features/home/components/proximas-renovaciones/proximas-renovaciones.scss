@@ -12,9 +12,16 @@ $home-table-header-gap: $spacing-16;
 $home-pr-tableHeader-padding-x: toRem(16px);
 $home-pr-tableHeader-padding-y: toRem(5px);
 
+:host{
+    display: block;
+    width: 100%;
+}
+
 .home-proximasRenovaciones{
     @include displayFlex(column, start, start);
     gap: $home-pr-gap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .home-proximasRenovaciones__table{
@@ -30,14 +37,17 @@ $home-pr-tableHeader-padding-y: toRem(5px);
 }
 
 .home-proximasRenovaciones__tableHeader{
-    // @include displayFlex(row, space-between, center);
-    display: grid;
-    grid-template-columns: repeat($home-table-header-columns, 1fr);
-    gap: $home-table-header-gap;
-    box-sizing: border-box;
-    width: 100%;
-    border-bottom: 1px solid $color-border-border300;
-    padding: $home-pr-tableHeader-padding-y $home-pr-tableHeader-padding-x;
+    display: none;
+
+    @include desktop(){
+        display: grid;
+        grid-template-columns: repeat($home-table-header-columns, 1fr);
+        gap: $home-table-header-gap;
+        box-sizing: border-box;
+        width: 100%;
+        border-bottom: 1px solid $color-border-border300;
+        padding: $home-pr-tableHeader-padding-y $home-pr-tableHeader-padding-x;
+    }
 
     span{
         @include body($color-text-subtitle);

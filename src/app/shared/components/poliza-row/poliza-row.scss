@@ -3,6 +3,7 @@
 $poliza-row-padding-x: toRem(16px);
 $poliza-row-padding-y: toRem(24px);
 $poliza-row-gap: toRem(24px);
+$poliza-row-div-gap: toRem(4px);
 
 $poliza-row-shadow-color: #3746491A;
 $poliza-row-border-radius: toRem(8px);
@@ -25,10 +26,8 @@ $poliza-row-paid-text: #397A3F;
     width: 100%;
 }
 
-.poliza-row{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    
+.poliza-row{   
+    @include displayFlex(column, space-between, start);
     width: 100%;
     padding: $poliza-row-padding-y $poliza-row-padding-x;
     gap: $poliza-row-gap;
@@ -37,8 +36,26 @@ $poliza-row-paid-text: #397A3F;
     background-color: white;
     box-shadow: 0px 6px 16px 0px $poliza-row-shadow-color;
     
+    @include desktop(){
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        .poliza-row-title{
+            display: none;
+        }
+    }
+
+    div{
+        @include displayFlex(column, space-between, start);
+        gap: $poliza-row-div-gap;
+    }
+
     span{
         @include body($poliza-row-text-color);
+    }
+
+    .poliza-row-title{
+        @include body();
     }
 
     .poliza-row__importe{

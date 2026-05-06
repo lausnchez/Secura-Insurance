@@ -29,6 +29,8 @@ $clientes-potenciales-pInfo-padding-y: toRem(14px);
         $clientes-potenciales-card-padding-x;
     border-radius: $clientes-potenciales-card-border-radius;
     box-shadow: $clientes-potenciales-card-box-shadow;
+    box-sizing: border-box;
+    max-width: 100vw;
     // min-height: $clientes-potenciales-card-min-height;
 
     .clientes-potenciales-card__header{
@@ -41,8 +43,12 @@ $clientes-potenciales-pInfo-padding-y: toRem(14px);
     }
 
     .clientes-potenciales-card__personalData{
-        @include displayFlex(row, start, center);
+        @include displayFlex(column, start, start);
         gap: $clientes-potenciales-card-personalData-gap;
+
+        @include desktop(){
+            @include displayFlex(row, start, center);
+        }
     }
 
 
@@ -53,6 +59,9 @@ $clientes-potenciales-pInfo-padding-y: toRem(14px);
 
     .clientes-potenciales-card__header button{
         flex-grow: 0;
+        @include desktop(){
+            
+        }
         padding: 
             $clientes-potenciales-card-header-trash-button-padding-x 
             $clientes-potenciales-card-header-trash-button-padding-y;
@@ -70,16 +79,21 @@ $clientes-potenciales-pInfo-padding-y: toRem(14px);
     }
     .clientes-potenciales-card-email,
     .clientes-potenciales-card-phone{
-        @include bodyBold($color-base-primary);   
+        @include bodyBold($color-base-primary);  
+        padding: 0px;
     }
     
     .clientes-potenciales-card-email{
-        padding-top: $clientes-potenciales-pInfo-padding-y;
-        padding-bottom: $clientes-potenciales-pInfo-padding-y;
-        padding-right: $clientes-potenciales-pInfo-padding-x;
+        @include desktop(){
+            padding-top: $clientes-potenciales-pInfo-padding-y;
+            padding-bottom: $clientes-potenciales-pInfo-padding-y;
+            padding-right: $clientes-potenciales-pInfo-padding-x;
+        }
     }
     .clientes-potenciales-card-phone{
-        padding: $clientes-potenciales-pInfo-padding-y $clientes-potenciales-pInfo-padding-x;
+        @include desktop(){
+            padding: $clientes-potenciales-pInfo-padding-y $clientes-potenciales-pInfo-padding-x;
+        }
     }
 
     .clientes-potenciales-card-product{
