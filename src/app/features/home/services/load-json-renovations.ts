@@ -5,7 +5,7 @@ import { Poliza } from '../../../core/models/poliza.model';
 @Injectable({
   providedIn: 'root',
 })
-export class LoadHomeJsonService {
+export class LoadRenovationsHomeService {
   homeData = signal<Poliza[]>([]);
 
   constructor(private http: HttpClient){

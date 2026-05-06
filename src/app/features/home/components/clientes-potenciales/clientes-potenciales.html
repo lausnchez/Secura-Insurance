@@ -1,1 +1,8 @@
-<p>clientes-potenciales works!</p>
+<section class="home-clientesPotenciales">
+    <h2>Clientes Potenciales</h2>
+    <div class="home-clientesPotenciales__contents">
+        @for(client of homeClientData(); track client.email){
+            <home-clientes-potenciales-card [client]="client"></home-clientes-potenciales-card>
+        }
+    </div>
+</section>

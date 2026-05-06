@@ -1,0 +1,20 @@
+@use 'styles/index' as *;
+
+$home-cp-gap: toRem(32px);
+$home-cp-contents-grid-gap: $spacing-20;
+
+.home-clientesPotenciales{
+    @include displayFlex(column, start, start);
+    gap: $home-cp-gap;
+}
+
+.home-clientesPotenciales h2{
+    @include header3();
+}
+
+.home-clientesPotenciales__contents{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $home-cp-contents-grid-gap;
+    width: 100%;
+}

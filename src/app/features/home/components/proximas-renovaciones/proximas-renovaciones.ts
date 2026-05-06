@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BtnGeneral } from '../../../../shared/components/btn-general/btn-general';
 import { PolizaRow } from '../../../../shared/components/poliza-row/poliza-row';
-import { LoadHomeJsonService } from '../../services/load-json';
+import { LoadRenovationsHomeService } from '../../services/load-json-renovations';
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -12,6 +12,6 @@ import { RouterLink } from "@angular/router";
 })
 
 export class ProximasRenovaciones {
-  private loadJson = inject(LoadHomeJsonService);
+  private loadJson = inject(LoadRenovationsHomeService);
   homeData = this.loadJson.homeData;
 }

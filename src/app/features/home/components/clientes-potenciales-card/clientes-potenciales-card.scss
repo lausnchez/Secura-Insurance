@@ -1,0 +1,87 @@
+@use 'styles/index' as *;
+
+$clientes-potenciales-card-background: white;
+$clientes-potenciales-card-min-height: toRem(163px);
+$clientes-potenciales-card-gap: $spacing-24;
+$clientes-potenciales-card-padding-x: $spacing-24;
+$clientes-potenciales-card-padding-y: $spacing-16;
+$clientes-potenciales-card-border-radius: toRem(12px);
+$clientes-potenciales-card-box-shadow: 0px 3px 5px 0px #37464933;
+
+$clientes-potenciales-card-header-gap: toRem(10px);
+$clientes-potenciales-card-header-trash-button: $color-base-primary-25;
+$clientes-potenciales-card-header-trash-button-padding-x: toRem(8px);
+$clientes-potenciales-card-header-trash-button-padding-y: toRem(10px);
+$clientes-potenciales-card-header-trash-button-border-radius: toRem(8px);
+
+
+$clientes-potenciales-card-personalData-gap: $spacing-24;
+$clientes-potenciales-pInfo-padding-x: toRem(14px);
+$clientes-potenciales-pInfo-padding-y: toRem(14px);
+
+
+.clientes-potenciales-card{
+    @include displayFlex(column, start, start);
+    gap: $clientes-potenciales-card-gap;
+    background-color: $clientes-potenciales-card-background;
+    padding: 
+        $clientes-potenciales-card-padding-y 
+        $clientes-potenciales-card-padding-x;
+    border-radius: $clientes-potenciales-card-border-radius;
+    box-shadow: $clientes-potenciales-card-box-shadow;
+    // min-height: $clientes-potenciales-card-min-height;
+
+    .clientes-potenciales-card__header{
+        display: grid;
+        gap: $clientes-potenciales-card-header-gap;
+        width: 100%;
+        align-items: center;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .clientes-potenciales-card__personalData{
+        @include displayFlex(row, start, center);
+        gap: $clientes-potenciales-card-personalData-gap;
+    }
+
+
+    .clientes-potenciales-card-name{
+       @include subtitle($color-text-header3-default);
+       flex-grow: 1; 
+    }
+
+    .clientes-potenciales-card__header a{
+        flex-grow: 0;
+        padding: 
+            $clientes-potenciales-card-header-trash-button-padding-x 
+            $clientes-potenciales-card-header-trash-button-padding-y;
+        border-radius: $clientes-potenciales-card-header-trash-button-border-radius;
+        &:hover{
+            text-decoration: none;
+            background-color: $clientes-potenciales-card-header-trash-button;
+        }
+    }
+
+    .icon-trash-alt{
+        color: $color-base-primary;
+    }
+    .clientes-potenciales-card-email,
+    .clientes-potenciales-card-phone{
+        @include bodyBold($color-base-primary);   
+    }
+    
+    .clientes-potenciales-card-email{
+        padding-top: $clientes-potenciales-pInfo-padding-y;
+        padding-bottom: $clientes-potenciales-pInfo-padding-y;
+        padding-right: $clientes-potenciales-pInfo-padding-x;
+    }
+    .clientes-potenciales-card-phone{
+        padding: $clientes-potenciales-pInfo-padding-y $clientes-potenciales-pInfo-padding-x;
+    }
+
+    .clientes-potenciales-card-product{
+        @include body($color-base-primary-50);
+    }
+
+}
