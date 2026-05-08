@@ -13,12 +13,7 @@ export class PolizaRowTag {
   }
 
   getColorByState(){
-    switch(this.poliza.state){
-      case 'paid':
-        this.el.nativeElement.style.backgroundColor = "crimson"
-    }
+    
   }
-
-
 
 }

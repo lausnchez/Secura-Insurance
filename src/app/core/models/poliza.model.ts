@@ -1,5 +1,4 @@
-export type PolizaState = 'pending' | 'paid' | 'expired';
-
+export type PolizaState = 'Pendiente' | 'Pagado' | 'Vencida';
 export interface Poliza {
   policyNumber: number;
   name: string;

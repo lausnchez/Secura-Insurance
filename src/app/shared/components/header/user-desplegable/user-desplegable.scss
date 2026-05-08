@@ -1,0 +1,64 @@
+@use 'styles/index' as *;
+
+$header-user-desplegable-userHeader-color: $color-primary-grey;
+$header-user-desplegable-userHeader-gap: $spacing-22;
+$header-user-desplegable-height: calc(100vh - toRem(64px));
+$header-user-desplegable-userHeader-padding: $spacing-24;
+$header-user-desplegable-userHeader-border-top: 1px solid $color-border-default;
+$header-user-desplegable-icon-size: toRem(24px);
+
+.header__user-desplegable{
+    @include displayFlex(column);
+    width: 100%;
+    height: $header-user-desplegable-height;
+    
+    & > div > *{
+        width: 100%;
+        border-top: $header-user-desplegable-userHeader-border-top;
+    }
+
+    [class^='icon-']{
+        color: $color-base-primary;
+        font-size: 24px;
+        height: $header-user-desplegable-icon-size;
+        width: $header-user-desplegable-icon-size;
+        @include displayFlex(row, center, center);
+    }
+
+    .header__user-desplegable__userHeader{
+        @include displayFlex(column, space-between, start);
+        gap: $header-user-desplegable-userHeader-gap;
+        padding: $header-user-desplegable-userHeader-padding;
+    }
+
+    .header__user-desplegable__item{
+        @include displayFlex(row, start, center);
+        background-color: transparent;
+        padding-left: toRem(24px);
+        padding-top: toRem(17px);
+        padding-bottom: toRem(17px);
+        border: none;
+        border-left: 2px solid transparent;
+        gap: toRem(14px);
+
+        &:hover{
+            border-left: 2px solid $color-base-primary;
+        }
+    }
+
+    .header__user-desplegable__item span:not([class^='icon-']){
+        @include body();
+    }
+
+    .header__user-desplegable__userHeader__title{
+        @include bodyBold($header-user-desplegable-userHeader-color);
+    }
+
+    .header__user-desplegable__userHeader__subtitle{
+        @include body($header-user-desplegable-userHeader-color);
+    }
+
+    @include desktop(){
+        display: none;
+    }
+}

@@ -22,9 +22,9 @@
     <div>
         <span class="poliza-row-title">Estado</span>
         <span [ngClass]="{
-            'poliza-row__estado--pending': poliza.state == 'pending',
-            'poliza-row__estado--paid': poliza.state == 'paid',
-            'poliza-row__estado--expired': poliza.state == 'expired',
+            'poliza-row__estado--pending': poliza.state == 'Pendiente',
+            'poliza-row__estado--paid': poliza.state == 'Pagado',
+            'poliza-row__estado--expired': poliza.state == 'Vencida',
         }" class="poliza-row__estado" appPolizaRowTag>{{poliza.state}}</span>
     </div>
 </div>

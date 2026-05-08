@@ -12,10 +12,28 @@ export class LoadRenovationsHomeService {
       this.loadJson();
   }
 
+  mapState(n: number){
+    switch(n){
+      case 0:
+        return 'Pendiente';
+      case 1:
+        return 'Pagado';
+      case 2:
+        return 'Vencido';
+      default:
+        return 'Pendiente';
+    }
+  }
+
   loadJson(){
     this.http.get<{ renovations: Poliza[] }>('assets/json/home.json').
       subscribe(data =>{
-        this.homeData.set(data.renovations);
+        let renovations = data.renovations.map((p:any) => ({
+          ...p,
+          state: this.mapState(p.state),
+        }));
+
+        this.homeData.set(renovations);
       });
   }
 }

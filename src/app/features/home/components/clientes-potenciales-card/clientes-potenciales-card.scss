@@ -31,6 +31,8 @@ $clientes-potenciales-pInfo-padding-y: toRem(14px);
     box-shadow: $clientes-potenciales-card-box-shadow;
     box-sizing: border-box;
     max-width: 100vw;
+    min-height: toRem(200px);
+    height: fit-content;
     // min-height: $clientes-potenciales-card-min-height;
 
     .clientes-potenciales-card__header{

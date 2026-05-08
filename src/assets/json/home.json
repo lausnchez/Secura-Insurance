@@ -6,7 +6,7 @@
             "contractDate": "05/05/2025",
             "endDate": "05/05/2027",
             "amount": 30203.76,
-            "state": "pending"
+            "state": 0
         },
         {
             "policyNumber": 34654,
@@ -14,7 +14,7 @@
             "contractDate": "01/02/2022",
             "endDate": "01/02/2025",
             "amount": 303.76,
-            "state": "paid"
+            "state": 1
         },
         {
             "policyNumber": 3455464,
@@ -22,7 +22,7 @@
             "contractDate": "08/03/2026",
             "endDate": "08/03/2028",
             "amount": 3021.90,
-            "state": "paid"
+            "state": 1
         }
     ],
     "clients": [
