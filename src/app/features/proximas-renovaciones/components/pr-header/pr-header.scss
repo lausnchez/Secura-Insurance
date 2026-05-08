@@ -1,0 +1,74 @@
+@use 'styles/index' as *;
+
+:host{
+    display: block;
+    width: 100%;
+}
+
+$pr-header-background-color: white;
+$pr-header-padding-x: toRem(88px);
+$pr-header-padding-y: toRem(32px);
+$pr-header-gap: toRem(40px);
+$pr-header-border-bottom-color: #B7CBD3;
+
+$pr-header-breadcrumbs-gap: toRem(4px);
+
+$pr-header-pageInfo-totalPolizas-gap: toRem(16px);
+$pr-header-pageInfo-totalPolizas-background-color: #EFF3F5;
+$pr-header-pageInfo-totalPolizas-padding-x: toRem(12px);
+$pr-header-pageInfo-totalPolizas-padding-y: toRem(8px);
+$pr-header-pageInfo-totalPolizas-border-radius: toRem(8px);
+
+.proximas-renovaciones__header{
+    @include desktop(){
+        @include displayFlex(column, start, start);
+        background-color: $pr-header-background-color;
+        padding: $pr-header-padding-y $pr-header-padding-x;
+        box-sizing: border-box;
+        width: 100%;
+        gap: $pr-header-gap;
+        border-bottom: 1px solid $pr-header-border-bottom-color;
+    } 
+}
+
+// BREADCRUMBS
+.proximas-renovaciones__header__breadcrumbs{
+   @include desktop(){
+        @include displayFlex(row, start, center);
+        gap: $pr-header-breadcrumbs-gap;
+        
+        .proximas-renovaciones__header__breadcrumbs span:not([class='breadcrumb--title']){
+            @include body($color-text-label);
+        }
+        
+        .breadcrumb--title{
+            @include body($color-base-primary);
+        }
+        
+        span{
+            @include body();
+        }
+   }
+}
+
+// INFO
+.proximas-renovaciones__header__pageinfo{
+    @include desktop(){
+        @include displayFlex(row, space-between, center);
+        width: 100%;
+        
+        h2{
+            @include subtitle($color-text-title);
+        }
+
+        .proximas-renovaciones__header__pageinfo__totalPolizas{
+            @include displayFlex();
+            gap: $pr-header-pageInfo-totalPolizas-gap;
+            @include body();
+            width: fit-content;
+            background-color: $pr-header-pageInfo-totalPolizas-background-color; 
+            padding: $pr-header-pageInfo-totalPolizas-padding-y $pr-header-pageInfo-totalPolizas-padding-x;
+            border-radius: $pr-header-pageInfo-totalPolizas-border-radius;
+        }
+    }
+}

@@ -24,6 +24,7 @@ $header-mobile-padding-y: $spacing-8;
     background-color: $header-background-color;
     max-width: 100%;
     box-sizing: border-box;
+    border-bottom: 1px solid #EFF3F5;
     
     .header-principalContainer{
         display: grid;

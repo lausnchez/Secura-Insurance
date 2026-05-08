@@ -1,0 +1,15 @@
+@use 'styles/index' as *;
+
+.proximas-renovaciones{
+    @include displayFlex(column, start, stretch);
+    width: 100%;
+    .proximas-renovaciones__contents{
+        background-color: crimson;
+    }
+
+    >*{
+        display: block;
+        width: 100%;
+        height: fit-content;
+    }
+}
