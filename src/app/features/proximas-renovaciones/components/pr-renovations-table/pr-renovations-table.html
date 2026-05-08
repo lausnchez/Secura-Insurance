@@ -1,1 +1,5 @@
-<p>pr-renovations-table works!</p>
+<div>
+    @for(poliza of renovationData(); track poliza.policyNumber){
+        <app-poliza-row [poliza]="poliza"></app-poliza-row>
+    }
+</div>
