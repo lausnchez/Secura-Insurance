@@ -8,7 +8,7 @@ import { BurgerDesplegable } from './burger-desplegable/burger-desplegable';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, MatButtonModule, MatMenuModule, MatIconModule, UserDesplegable, BurgerDesplegable],
+  imports: [RouterLink, MatButtonModule, MatMenuModule, MatIconModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

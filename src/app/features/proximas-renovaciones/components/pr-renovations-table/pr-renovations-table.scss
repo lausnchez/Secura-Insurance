@@ -1,0 +1,37 @@
+@use 'styles/index' as *;
+
+$pr-contents-table-gap: $spacing-24;
+
+$pr-contents-tableHeader-columns: 6;
+$pr-contents-tableHeader-gap: $spacing-16;
+$pr-contents-tableHeader-padding-y: $spacing-8;
+$pr-contents-tableHeader-padding-x: $spacing-16;
+$pr-contents-tableHeader-border-color: $color-border-border300;
+
+:host{
+    display: block;
+    width: 100%;
+}
+
+.proximas-renovaciones__contents__table{
+    @include displayFlex(column, space-between, stretch);
+    width: 100%;
+    gap: $pr-contents-table-gap;
+
+    .proximas-renovaciones__contents__tableHeader{
+        @include displayGrid($columns: 6, $gap: 16px);
+        width: 100%;
+        border-bottom: 1px solid $pr-contents-tableHeader-border-color;
+        padding: $pr-contents-tableHeader-padding-y $pr-contents-tableHeader-padding-x;
+    }
+    
+    .proximas-renovaciones__contents__tableHeader span{
+        @include body();
+    }
+
+    .proximas-renovaciones__contents__tableContents{
+        @include displayFlex(column, space-between, stretch);
+        width: 100%;
+        gap: 24px;
+    }
+}

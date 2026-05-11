@@ -1,10 +1,22 @@
 @use 'styles/index' as *;
 
+$pr__contents-padding-x: $spacing-24;
+$pr__contents-padding-top: $spacing-40;
+$pr__contents-padding-bottom: $spacing-80;
+$pr__contents-gap: toRem(40px);
+
 .proximas-renovaciones{
     @include displayFlex(column, start, stretch);
     width: 100%;
     .proximas-renovaciones__contents{
-        background-color: white;
+        @include displayFlex(column, center, stretch);
+        box-sizing: border-box;
+        padding: 
+            $pr__contents-padding-top
+            $pr__contents-padding-x
+            $pr__contents-padding-bottom
+            $pr__contents-padding-x;
+        width: 100%;
     }
 
     >*{

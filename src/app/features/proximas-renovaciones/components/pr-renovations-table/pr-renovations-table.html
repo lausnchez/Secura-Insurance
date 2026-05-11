@@ -1,5 +1,15 @@
-<div>
-    @for(poliza of renovationData(); track poliza.policyNumber){
-        <app-poliza-row [poliza]="poliza"></app-poliza-row>
-    }
+<div class="proximas-renovaciones__contents__table">
+    <div class="proximas-renovaciones__contents__tableHeader">
+        <span>No. de póliza</span>
+        <span>Nombre del riesgo</span>
+        <span>Fecha de contrato</span>
+        <span>Fecha de vencimiento</span>
+        <span>Importe</span>
+        <span>Estado de la póliza</span>
+    </div>
+    <div class="proximas-renovaciones__contents__tableContents">
+        @for(poliza of renovationData(); track poliza.policyNumber){
+            <app-poliza-row [poliza]="poliza"></app-poliza-row>
+        }
+    </div>
 </div>
