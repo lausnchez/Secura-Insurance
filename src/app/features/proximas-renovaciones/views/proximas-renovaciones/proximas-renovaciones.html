@@ -1,9 +1,15 @@
 <section class="proximas-renovaciones">
     <pr-header></pr-header> 
     
-    <section class="proximas-renovaciones__contents">
-        
+    <section class="proximas-renovaciones__contents">     
         <pr-renovations-table></pr-renovations-table>
-        <mat-paginator></mat-paginator>
+        <mat-paginator 
+            [pageSizeOptions]="[1, 3, 5, 10]"
+            [length]="renovationJsonInjection.totalRenovations()"
+            [pageSize]="renovationJsonInjection.pageSize()"
+            [pageIndex]="renovationJsonInjection.currentPage()"
+            (page) = "onPageChange($event)"
+            [showFirstLastButtons]="true">
+        </mat-paginator>
     </section>
 </section>

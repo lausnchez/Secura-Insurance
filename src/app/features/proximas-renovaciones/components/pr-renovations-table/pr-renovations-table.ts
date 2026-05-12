@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
 import { PolizaRow } from '../../../../shared/components/poliza-row/poliza-row';
 
@@ -9,8 +9,5 @@ import { PolizaRow } from '../../../../shared/components/poliza-row/poliza-row';
   styleUrl: './pr-renovations-table.scss',
 })
 export class PrRenovationsTable {
-  private loadJson = inject(LoadJsonTotalRenovations);
-  renovationData = this.loadJson.renovationsData;  
-  ;
-  
+  renovationsService = inject(LoadJsonTotalRenovations);
 }

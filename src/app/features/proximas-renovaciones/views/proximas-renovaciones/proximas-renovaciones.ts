@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { PrHeader } from '../../components/pr-header/pr-header';
 import { PrRenovationsTable } from '../../components/pr-renovations-table/pr-renovations-table';
 import { PolizaRow } from '../../../../shared/components/poliza-row/poliza-row';
-import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
+import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
 
 @Component({
   selector: 'app-proximas-renovaciones',
@@ -12,5 +12,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   styleUrl: './proximas-renovaciones.scss',
 })
 export class ProximasRenovaciones {
-  totalPolizas = 0;
+  renovationJsonInjection = inject(LoadJsonTotalRenovations);
+  
+  onPageChange(event: PageEvent){
+    this.renovationJsonInjection.setPagination(event.pageIndex, event.pageSize);
+  }
+
 }
