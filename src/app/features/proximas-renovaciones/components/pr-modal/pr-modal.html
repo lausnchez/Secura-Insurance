@@ -1,0 +1,45 @@
+@if(getModal()){
+   <section class="pr-modal">
+    <div class="pr-modal__header">
+        <span>Filtros</span>
+        <span class="icon-close"></span>
+    </div>
+    <div class="pr-modal__contents">
+        <form action="">
+            <div>
+                <label for="numPoliza">Número de póliza</label>
+                <input type="text" name="numPoliza">
+            </div>
+            <div>
+                <label for="nombreRiesgo">Nombre del riesgo</label>
+                <input type="text" name="nombreRiesgo">
+            </div>
+            <div>
+                <label for="">Fecha de validez</label>
+                <div>
+                    <input type="date">
+                    <span>al</span>
+                    <input type="date">
+                </div>
+            </div>
+            <div>
+                <label for="importe">Importe</label>
+                <input type="number" name="importe">
+            </div>
+            <div>
+                <label for="estado">Estado</label>
+                <select name="estado" id="">
+                    <option value="">Pendiente</option>
+                    <option value="">Pagada</option>
+                    <option value="">Vencida</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="pr-modal__footer">
+        <button>Borrar filtros</button>
+        <button>Aplicar filtros</button>
+    </div>
+</section>
+<section class="pr-modal-underlay" (click)="setModal(false)"></section> 
+}

@@ -1,13 +1,13 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PrHeader } from '../../components/pr-header/pr-header';
 import { PrRenovationsTable } from '../../components/pr-renovations-table/pr-renovations-table';
-import { PolizaRow } from '../../../../shared/components/poliza-row/poliza-row';
 import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
 import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
+import { PrModal } from '../../components/pr-modal/pr-modal';
 
 @Component({
   selector: 'app-proximas-renovaciones',
-  imports: [PrHeader, PrRenovationsTable, MatPaginatorModule],
+  imports: [PrHeader, PrRenovationsTable, MatPaginatorModule, PrModal],
   templateUrl: './proximas-renovaciones.html',
   styleUrl: './proximas-renovaciones.scss',
 })

@@ -1,10 +1,9 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
-import { PolizaRow } from '../../../../shared/components/poliza-row/poliza-row';
 
 @Component({
   selector: 'pr-renovations-table',
-  imports: [PolizaRow],
+  imports: [],
   templateUrl: './pr-renovations-table.html',
   styleUrl: './pr-renovations-table.scss',
 })
