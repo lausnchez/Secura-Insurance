@@ -5,7 +5,7 @@ import { signal } from '@angular/core';
   providedIn: 'root',
 })
 export class ModalService {
-  mostrarModal = signal<boolean>(true);
+  mostrarModal = signal<boolean>(false);
   readonly isOpen = this.mostrarModal.asReadonly();
 
 

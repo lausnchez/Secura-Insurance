@@ -1,3 +1,4 @@
+import { ModalService } from './../../services/modal-service/modal-service';
 import { Component, inject } from '@angular/core';
 import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
 
@@ -9,4 +10,7 @@ import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovat
 })
 export class PrRenovationsTable {
   renovationsService = inject(LoadJsonTotalRenovations);
+  modalService = inject(ModalService);
+
+  totalPolizas = this.renovationsService.totalRenovations;
 }

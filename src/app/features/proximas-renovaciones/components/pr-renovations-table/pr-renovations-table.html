@@ -1,3 +1,25 @@
+<div class="proximas-renovaciones__contents__filters">
+    <div class="pr__contents__filters__filter-list">
+        <button (click)="modalService.setModal(true)">
+            <span class="icon-filter"></span>
+            <span>Filtros</span>
+        </button>
+        <div class="pr__contents__filters__filter-chips"></div>
+    </div>
+    <div class="pr__contents__filters__data">
+        <span>{{totalPolizas()}} pólizas</span>
+        <div>
+            <label for="ordenarpor">Ordenar por:</label>
+            <select name="ordenarpor" id="select_ordenarPor">
+                <option value="numPoliza">Número de póliza</option>
+                <option value="importe">Importe</option>
+                <option value="fechaContratacion">Fecha de contratación</option>
+                <option value="fechaVencimiento">Fecha de vencimiento</option>
+            </select>
+        </div>
+    </div>
+</div>
+
 <div class="proximas-renovaciones__contents__table">
     <div class="proximas-renovaciones__contents__tableHeader">
         <span>No. de póliza</span>
@@ -30,9 +52,4 @@
             </tr>
         }
     </table>
-    <!-- <div class="proximas-renovaciones__contents__tableContents">
-        @for(poliza of renovationData(); track poliza.policyNumber){
-            <app-poliza-row [poliza]="poliza"></app-poliza-row>
-        }
-    </div> -->
 </div>
