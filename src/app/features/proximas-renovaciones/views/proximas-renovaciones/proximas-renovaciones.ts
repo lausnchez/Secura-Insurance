@@ -11,9 +11,9 @@ import { PrModal } from '../../components/pr-modal/pr-modal';
   templateUrl: './proximas-renovaciones.html',
   styleUrl: './proximas-renovaciones.scss',
 })
-export class ProximasRenovaciones {
+export class ProximasRenovaciones {  
   renovationJsonInjection = inject(LoadJsonTotalRenovations);
-  
+
   onPageChange(event: PageEvent){
     this.renovationJsonInjection.setPagination(event.pageIndex, event.pageSize);
   }

@@ -5,30 +5,30 @@
         <span class="icon-close" (click)="modalService.setModal(false)"></span>
     </div>
     <div class="pr-modal__contents">
-        <form action="">
+        <form action="" [formGroup]="filterForm">
             <div>
                 <label for="numPoliza">Número de póliza</label>
-                <input type="text" name="numPoliza">
+                <input type="text" name="numPoliza" formControlName="numPoliza">
             </div>
             <div>
                 <label for="nombreRiesgo">Nombre del riesgo</label>
-                <input type="text" name="nombreRiesgo">
+                <input type="text" name="nombreRiesgo" formControlName="nombreRiesgo">
             </div>
             <div>
                 <label for="">Fecha de validez</label>
                 <div>
-                    <input type="date">
+                    <input type="date" formControlName="fechaInicio">
                     <span>al</span>
-                    <input type="date">
+                    <input type="date" formControlName="fechaFinal">
                 </div>
             </div>
             <div>
                 <label for="importe">Importe</label>
-                <input type="number" name="importe">
+                <input type="number" name="importe" formControlName="importe">
             </div>
             <div>
                 <label for="estado">Estado</label>
-                <select name="estado" id="">
+                <select name="estado" id="" formControlName="estado">
                     <option value="">Pendiente</option>
                     <option value="">Pagada</option>
                     <option value="">Vencida</option>

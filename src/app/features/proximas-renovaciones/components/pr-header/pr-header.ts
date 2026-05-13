@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
 
 @Component({
   selector: 'pr-header',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './pr-header.scss',
 })
 export class PrHeader {
-  totalPolizas = 0;
+  renovationService = inject(LoadJsonTotalRenovations);
 }
