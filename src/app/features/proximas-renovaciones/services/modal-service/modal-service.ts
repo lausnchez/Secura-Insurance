@@ -5,16 +5,12 @@ import { signal } from '@angular/core';
   providedIn: 'root',
 })
 export class ModalService {
-  mostrarModal = signal<boolean>(false);
+  mostrarModal = signal<boolean>(true);
+  readonly isOpen = this.mostrarModal.asReadonly();
 
-  getModal():boolean{
-    return this.mostrarModal();
-  }
 
   toggleModal(){
-    let currentValue = this.mostrarModal();
-    this.setModal(!currentValue);
-    return this.mostrarModal();
+    this.mostrarModal.update(m =>!m);
   }
   
   setModal(value:boolean){

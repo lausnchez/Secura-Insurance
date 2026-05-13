@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ModalService } from '../../services/modal-service/modal-service';
 
 @Component({
   selector: 'pr-modal',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './pr-modal.scss',
 })
 export class PrModal {
-  
+  modalService = inject(ModalService);
 }

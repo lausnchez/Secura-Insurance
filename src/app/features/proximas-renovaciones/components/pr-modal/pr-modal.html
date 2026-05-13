@@ -1,8 +1,8 @@
-@if(getModal()){
+@if(modalService.isOpen()){
    <section class="pr-modal">
     <div class="pr-modal__header">
         <span>Filtros</span>
-        <span class="icon-close"></span>
+        <span class="icon-close" (click)="modalService.setModal(false)"></span>
     </div>
     <div class="pr-modal__contents">
         <form action="">
@@ -41,5 +41,5 @@
         <button>Aplicar filtros</button>
     </div>
 </section>
-<section class="pr-modal-underlay" (click)="setModal(false)"></section> 
+<section class="pr-modal-underlay" (click)="modalService.setModal(false)"></section> 
 }
