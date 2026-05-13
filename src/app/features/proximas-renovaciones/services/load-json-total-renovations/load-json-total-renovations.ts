@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoadJsonTotalRenovations {
   
   renovationsData = signal<Poliza[]>([]); // Datos finales
-  pageSize = signal<number>(1); // Elementos por página
+  pageSize = signal<number>(5); // Elementos por página
   currentPage = signal<number>(0); // Número de página
   
   filters = signal<[{filter: string, content: string}]>([{filter: '', content: ''}]); // Filtros aplicados
@@ -85,9 +85,34 @@ export class LoadJsonTotalRenovations {
         let renovations = data.renovations.map((p:any) => ({
           ...p,
           state: this.mapState(p.state),
+          contractDate: new Date(p.contractDate),
+          endDate: new Date(p.endDate),
         })); 
         this.renovationsData.set(renovations);
+        this.sortRenovations('numPoliza');
     });
+  }
+
+  sortRenovations(sortingOrder:string){
+    switch(sortingOrder){
+      case 'numPoliza':
+        this.renovationsData.update(data => [...data].sort((a, b) => a.policyNumber - b.policyNumber));
+        break;
+      case 'importe':
+        this.renovationsData.update(data => [...data].sort((a, b) => a.amount - b.amount));
+        break;
+      case 'fechaContratacion':
+        this.renovationsData.update(data => [...data].sort((a, b) => a.contractDate.getTime() - b.contractDate.getTime()));
+        break;
+      case 'fechaVencimiento':
+        this.renovationsData.update(data => [...data].sort((a, b) => a.endDate.getTime() - b.endDate.getTime()));
+        break;
+      
+      default:
+        this.renovationsData.update(data => [...data].sort((a, b) => a.policyNumber - b.policyNumber));    
+        break;
+    }
+    this.currentPage.set(0);
   }
 
   setPagination(pageIndex: number, pageSize: number){

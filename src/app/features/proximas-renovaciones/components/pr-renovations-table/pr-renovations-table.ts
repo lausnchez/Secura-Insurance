@@ -11,4 +11,18 @@ import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovat
 export class PrRenovationsTable {
   renovationsService = inject(LoadJsonTotalRenovations);
   modalService = inject(ModalService);
+
+  onOrderSelection(event: Event){
+    const element = event.target as HTMLSelectElement;
+    const value = element.value;
+    this.renovationsService.sortRenovations(value);
+  }
+
+  toStringDateFormat(date:Date):string{
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear());
+
+    return `${day}/${month}/${year}`;
+  }
 }
