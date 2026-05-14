@@ -1,9 +1,9 @@
 <div class="proximas-renovaciones__contents__filters">
     <div class="pr__contents__filters__filter-list">
-        <button (click)="modalService.setModal(true)">
+        <app-btn-general (click)="modalService.setModal(true)" variant="transparent">
             <span class="icon-filter"></span>
             <span>Filtros</span>
-        </button>
+        </app-btn-general>
         <div class="pr__contents__filters__filter-chips"></div>
     </div>
     <div class="pr__contents__filters__data">
@@ -31,7 +31,7 @@
     </div>
     
     <table class="proximas-renovaciones__contents__tableContents">
-        <thead>
+        <!-- <thead>
             <tr>
             <th scope="col">No. poliza</th>
             <th scope="col">Nombre del riesgo</th>
@@ -40,15 +40,19 @@
             <th scope="col">Importe</th>
             <th scope="col">Estado</th>
             </tr>
-        </thead>
+        </thead> -->
         @for(poliza of this.renovationsService.paginatedRenovations(); track poliza.policyNumber){
-            <tr>
+            <tr class="pr-poliza-row">
                 <td scope="col">{{poliza.policyNumber}}</td>
                 <td scope="col">{{poliza.name}}</td>
                 <td scope="col">{{this.toStringDateFormat(poliza.contractDate)}}</td>
                 <td scope="col">{{this.toStringDateFormat(poliza.endDate)}}</td>
-                <td scope="col">{{poliza.amount}}</td>
-                <td scope="col">{{poliza.state}}</td>
+                <td scope="col" class="pr-poliza-row-highlight">{{poliza.amount | currency:'EUR'}}</td>
+                <td scope="col" class="pr-poliza-row__estado" [ngClass]="{
+                    'pr-poliza-row__estado--pending': poliza.state == 'Pendiente',
+                    'pr-poliza-row__estado--paid': poliza.state == 'Pagado',
+                    'pr-poliza-row__estado--expired': poliza.state == 'Vencida',
+                }" appPolizaRowTag>{{poliza.state}}</td>
             </tr>
         }
     </table>

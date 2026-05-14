@@ -4,10 +4,11 @@ import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 import { FilterManagement } from '../../services/filter-management/filter-management';
 import { Filter } from '../../../../core/models/filter.model';
 import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
+import { BtnGeneral } from '../../../../shared/components/btn-general/btn-general';
 
 @Component({
   selector: 'pr-modal',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, BtnGeneral],
   templateUrl: './pr-modal.html',
   styleUrl: './pr-modal.scss',
 })

@@ -9,5 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class BtnGeneral {
   @Input() textContent:string = '';
-  @Input() variant: 'basic' | 'white' = 'basic';
+  @Input() variant: 'basic' | 'transparent' |'white' = 'basic';
+  @Input() type: 'button' | 'submit' = 'submit';
 }

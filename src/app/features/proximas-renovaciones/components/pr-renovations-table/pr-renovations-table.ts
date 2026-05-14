@@ -1,10 +1,13 @@
 import { ModalService } from './../../services/modal-service/modal-service';
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
+import { BtnGeneral } from '../../../../shared/components/btn-general/btn-general';
+import { CurrencyPipe, NgClass } from '@angular/common';
+import { PolizaRowTag } from '../../../../shared/directives/polizaRowTag/poliza-row-tag';
 
 @Component({
   selector: 'pr-renovations-table',
-  imports: [],
+  imports: [BtnGeneral, NgClass, CurrencyPipe, PolizaRowTag],
   templateUrl: './pr-renovations-table.html',
   styleUrl: './pr-renovations-table.scss',
 })

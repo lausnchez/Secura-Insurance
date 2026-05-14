@@ -2,6 +2,18 @@
 
 $pr-modal-width: toRem(500px);
 
+$pr-modal-header-padding-x: $spacing-40;
+$pr-modal-header-padding-y: $spacing-24;
+
+$pr-modal-footer-padding-x: $spacing-40;
+$pr-modal-footer-padding-y: $spacing-12;
+$pr-modal-footer-border-top-color: #D8D5D5;
+
+$pr-modal-contents-padding-y: $spacing-32;
+$pr-modal-contents-padding-x: $spacing-40;
+$pr-modal-contents-gap: $spacing-32;
+
+$pr-modal-form-contents-gap: $spacing-8;
 
 .pr-modal{
     position: fixed;
@@ -11,6 +23,51 @@ $pr-modal-width: toRem(500px);
     height: 100vh;
     width: $pr-modal-width;
     z-index: 100;
+}
+
+.pr-modal__contents{
+    padding: $pr-modal-contents-padding-y $pr-modal-contents-padding-x;
+
+    form{
+        @include displayFlex(column, start, start);
+        gap: $pr-modal-contents-gap;
+    }
+
+    div:not([class^='pr-modal__footer']){
+        @include displayFlex(column, start, start);
+        gap: $pr-modal-form-contents-gap;
+        width: 100%;
+    }
+
+    label{
+        @include bodyBold();
+    }
+}
+
+.pr-modal__header{
+    @include displayFlex(row, space-between, center);
+    padding: $pr-modal-header-padding-y $pr-modal-header-padding-x;
+    border-bottom: 1px solid $color-border-border100;
+
+    span:not([class^='icon']){
+        @include bodyBold($color-text-title);
+    }
+
+    .icon-close{
+        color: $color-base-primary;
+        cursor: pointer;
+    }
+}
+
+.pr-modal__footer{
+    @include displayFlex(row, space-between, center);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: $pr-modal-width;
+    padding: $pr-modal-footer-padding-y $pr-modal-footer-padding-x;
+    box-sizing: border-box;
+    border-top: 1px solid $pr-modal-footer-border-top-color;
 }
 
 .pr-modal-underlay{

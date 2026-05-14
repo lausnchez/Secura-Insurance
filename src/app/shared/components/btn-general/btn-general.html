@@ -1,1 +1,5 @@
-<button [ngClass]="[variant, 'btn-general']">{{textContent}}</button>
+<button 
+    type="{{type}}"
+    [ngClass]="[variant, 'btn-general']">
+    <ng-content></ng-content>
+</button>

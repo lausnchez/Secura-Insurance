@@ -1,6 +1,8 @@
-@use "media-queries" as *;
-@use "variables" as *;
-@use "mixins" as *;
+@use "./media-queries" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./functions" as *;
 
 *,
 *:before,
@@ -43,4 +45,22 @@ ul{
 .div-centered{
     @include displayFlex(row, start, center);
     gap: $spacing-8;
+}
+
+select, input{
+    background-color: white;
+    border-color: #A7B8BF;
+    border-radius: toRem(4px);
+    padding: toRem(8px);
+    outline: none;
+    box-shadow: none;
+}
+
+input{
+    appearance: none;
+}
+
+select{
+  appearance: auto;
+  @include body($color-text-title);
 }

@@ -18,7 +18,7 @@
     align-items: $align;
 }
 
-@mixin displayGrid($columns: 0, $rows: 0, $gap: 0px, $justify: space-between, $align: center){
+@mixin displayGrid($columns: 1, $rows: 1, $gap: 0px, $justify: space-between, $align: center){
     display: grid;
     grid-template-columns: repeat($columns, 1fr);
     grid-template-rows: repeat($rows, 1fr);

@@ -8,11 +8,11 @@
         <form action="" [formGroup]="filterForm" (ngSubmit)="generateFilters()">
             <div>
                 <label for="numPoliza">Número de póliza</label>
-                <input type="number" name="numPoliza" formControlName="numPoliza">
+                <input type="number" name="numPoliza" formControlName="numPoliza" placeholder="Número de póliza">
             </div>
             <div>
                 <label for="nombreRiesgo">Nombre del riesgo</label>
-                <input type="text" name="nombreRiesgo" formControlName="nombreRiesgo">
+                <input type="text" name="nombreRiesgo" formControlName="nombreRiesgo" placeholder="Nombre del riesgo">
             </div>
             <div>
                 <label for="">Fecha de validez</label>
@@ -24,7 +24,7 @@
             </div>
             <div>
                 <label for="importe">Importe</label>
-                <input type="number" name="importe" formControlName="importe">
+                <input type="number" name="importe" formControlName="importe" placeholder="Introduzca un importe">
             </div>
             <div>
                 <label for="estado">Estado</label>
@@ -36,8 +36,12 @@
                 </select>
             </div>
             <div class="pr-modal__footer">
-                <button type="button" (click)="deleteAllFilters()">Borrar filtros</button>
-                <button type="submit">Aplicar filtros</button>
+                <app-btn-general variant="white" (click)="deleteAllFilters()">
+                    <span>Borrar filtros</span>
+                </app-btn-general>
+                <app-btn-general type="submit">
+                    <span>Aplicar filtros</span>
+                </app-btn-general>
             </div>
         </form>
     </div>

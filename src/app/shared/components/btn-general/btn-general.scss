@@ -3,9 +3,12 @@
 $btn-general-padding-x: toRem(16px);
 $btn-general-padding-y: toRem(10px);
 $btn-general-border-radius: toRem(8px);
+$btn-general-gap: $spacing-10;
 
 .btn-general{
     @include body($color-text-information-text);
+    @include displayFlex(row, center, center);
+    gap: $btn-general-gap ;
     padding: $btn-general-padding-y $btn-general-padding-x;
     border-radius: $btn-general-border-radius;
     border: none;
@@ -18,8 +21,19 @@ $btn-general-border-radius: toRem(8px);
     &.basic{
         background-color: $color-base-primary-25;
     }
+    
+    &.transparent{
+        background-color: transparent;
+        border: 1px solid $color-base-primary-50;
+    }
 
     &:hover{
         background-color: $color-base-primary-75;
     }    
+}
+
+// Investigar
+:host ::ng-deep .btn-general.transparent [class^='icon-'],
+:host ::ng-deep .btn-general.transparent [class*=' icon-']{
+    color: $color-base-primary;
 }
