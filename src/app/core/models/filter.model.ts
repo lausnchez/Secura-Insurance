@@ -1,13 +1,13 @@
-export type FiltroType = 
-    'noPoliza' |
-    'noRiesgo' |
-    'fContrato' |
-    'fFinal' |
+export type FiltroType =
+    'numPoliza' |
+    'nombreRiesgo' |
+    'fechaInicio' |
+    'fechaFinal' |
     'importe' |
     'estado';
 
-export interface Filter{
-    id: string,
-    type: FiltroType,
-    value: unknown,
+export interface Filter {
+    id: string;
+    type: FiltroType;
+    value: string;
 }

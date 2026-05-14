@@ -5,10 +5,10 @@
         <span class="icon-close" (click)="modalService.setModal(false)"></span>
     </div>
     <div class="pr-modal__contents">
-        <form action="" [formGroup]="filterForm">
+        <form action="" [formGroup]="filterForm" (ngSubmit)="generateFilters()">
             <div>
                 <label for="numPoliza">Número de póliza</label>
-                <input type="text" name="numPoliza" formControlName="numPoliza">
+                <input type="number" name="numPoliza" formControlName="numPoliza">
             </div>
             <div>
                 <label for="nombreRiesgo">Nombre del riesgo</label>
@@ -29,16 +29,17 @@
             <div>
                 <label for="estado">Estado</label>
                 <select name="estado" id="" formControlName="estado">
-                    <option value="">Pendiente</option>
-                    <option value="">Pagada</option>
-                    <option value="">Vencida</option>
+                    <option value="">Selecciona un estado</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Pagado">Pagado</option>
+                    <option value="Vencida">Vencida</option>
                 </select>
             </div>
+            <div class="pr-modal__footer">
+                <button type="button" (click)="deleteAllFilters()">Borrar filtros</button>
+                <button type="submit">Aplicar filtros</button>
+            </div>
         </form>
-    </div>
-    <div class="pr-modal__footer">
-        <button>Borrar filtros</button>
-        <button>Aplicar filtros</button>
     </div>
 </section>
 <section class="pr-modal-underlay" (click)="modalService.setModal(false)"></section> 

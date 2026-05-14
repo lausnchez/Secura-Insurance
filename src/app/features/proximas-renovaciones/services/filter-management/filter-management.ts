@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Filter } from '../../../../core/models/filter.model';
-import { HttpClient } from '@angular/common/http';
 import { signal } from '@angular/core';
-
 @Injectable({
   providedIn: 'root',
 })
 export class FilterManagement {
+    
   filterList = signal<Filter[]>([]);
 
-  constructor(private httpServer: HttpClient){
-  
+  setFilters(filters: Filter[]){
+    this.filterList.set(filters);
   }
 
 
@@ -31,5 +30,4 @@ export class FilterManagement {
   updateFilter(filterID: string){
 
   }
-
 }
