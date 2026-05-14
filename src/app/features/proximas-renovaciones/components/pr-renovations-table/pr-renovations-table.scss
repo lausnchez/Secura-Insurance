@@ -2,34 +2,9 @@
 
 $pr-contents-table-gap: $spacing-24;
 
-$pr-contents-tableHeader-columns: 6;
-$pr-contents-tableHeader-gap: $spacing-16;
 $pr-contents-tableHeader-padding-y: $spacing-8;
 $pr-contents-tableHeader-padding-x: $spacing-16;
 $pr-contents-tableHeader-border-color: $color-border-border300;
-
-// Filas de la tabla
-$pr-poliza-row-color: black;
-$pr-poliza-row-background-color: white;
-
-$pr-poliza-row-padding-x: toRem(16px);
-$pr-poliza-row-padding-y: toRem(24px);
-$pr-poliza-row-gap: toRem(24px);
-$pr-poliza-row-div-gap: toRem(24px);
-
-$pr-poliza-row-shadow-color: #3746491A;
-$pr-poliza-row-border-radius: toRem(8px);
-
-$pr-poliza-row-state-padding-x: toRem(8px);
-$pr-poliza-row-state-padding-y: toRem(2px);
-$pr-poliza-row-state-radius: toRem(4px);
-
-$pr-poliza-row-pending: #FFE74F66;
-$pr-poliza-row-pending-text: $color-text-subtitle;
-$pr-poliza-row-expired: #DB39001F;
-$pr-poliza-row-expired-text: #B22E00;
-$pr-poliza-row-paid: #57AE6026;
-$pr-poliza-row-paid-text: #397A3F;
 
 :host{
     display: block;
@@ -54,62 +29,10 @@ $pr-poliza-row-paid-text: #397A3F;
 
     .proximas-renovaciones__contents__tableContents{
         @include displayFlex(column, space-between, start);
-        gap: $pr-poliza-row-div-gap;
+        gap: toRem(24px);
         width: 100%;
         border-collapse: collapse;
-
-        // thead tr,
-        // tr{
-        //     display: grid;
-        //     grid-template-columns: repeat(6, 1fr);
-        //     width: 100%;
-        // }
-
-        th,
-        td{
-            min-width: 0;
-            text-align: left;
-            word-break: break-word;
-        }
-    }
-}
-
-.pr-poliza-row{
-    @include displayGrid(6);
-    width: 100%;
-    background-color: $pr-poliza-row-background-color;
-    padding: $pr-poliza-row-padding-y $pr-poliza-row-padding-x;
-    box-sizing: border-box;
-    border-radius: $pr-poliza-row-border-radius;
-    box-shadow: 0px 6px 16px 0px $pr-poliza-row-shadow-color;
-
-    td{
-        @include body($pr-poliza-row-color);
-    }
-
-    .pr-poliza-row-highlight{
-        @include bodyBold($pr-poliza-row-color);
-    }
-
-    // Tags
-    .pr-poliza-row__estado{
-        padding: $pr-poliza-row-state-padding-y $pr-poliza-row-state-padding-x;
-        width: fit-content;
-        border-radius: $pr-poliza-row-state-radius;
-    }
-
-    .pr-poliza-row__estado--pending{
-        @include body($pr-poliza-row-pending-text);
-        background-color: $pr-poliza-row-pending;
-    }
-
-    .pr-poliza-row__estado--paid{
-        @include body($pr-poliza-row-paid-text);
-        background-color: $pr-poliza-row-paid;
-    }
-
-    .pr-poliza-row__estado--expired{
-        @include body($pr-poliza-row-expired-text);
-        background-color: $pr-poliza-row-expired;
+        padding-bottom: toRem(20px);
+        overflow: visible;
     }
 }

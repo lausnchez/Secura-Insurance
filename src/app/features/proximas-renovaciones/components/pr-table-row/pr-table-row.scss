@@ -1,0 +1,72 @@
+@use 'styles/index' as *;
+
+// Variables
+$pr-poliza-row-color: black;
+$pr-poliza-row-background-color: white;
+
+$pr-poliza-row-padding-x: toRem(16px);
+$pr-poliza-row-padding-y: toRem(24px);
+
+$pr-poliza-row-shadow-color: #3746491A;
+$pr-poliza-row-border-radius: toRem(8px);
+
+$pr-poliza-row-state-padding-x: toRem(8px);
+$pr-poliza-row-state-padding-y: toRem(2px);
+$pr-poliza-row-state-radius: toRem(4px);
+
+$pr-poliza-row-pending: #FFE74F66;
+$pr-poliza-row-pending-text: $color-text-subtitle;
+$pr-poliza-row-expired: #DB39001F;
+$pr-poliza-row-expired-text: #B22E00;
+$pr-poliza-row-paid: #57AE6026;
+$pr-poliza-row-paid-text: #397A3F;
+
+// ----------------------------------------------------------------------
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.pr-poliza-row{
+    @include displayGrid(6);
+    width: 100%;
+    background-color: $pr-poliza-row-background-color;
+    padding: $pr-poliza-row-padding-y $pr-poliza-row-padding-x;
+    box-sizing: border-box;
+    border-radius: $pr-poliza-row-border-radius;
+    box-shadow: 0px 6px 16px 0px $pr-poliza-row-shadow-color;
+
+    td{
+        @include body($pr-poliza-row-color);
+        min-width: 0;
+        text-align: left;
+        word-break: break-word;
+    }
+
+    .pr-poliza-row-highlight{
+        @include bodyBold($pr-poliza-row-color);
+    }
+
+    // Tags
+    .pr-poliza-row__estado{
+        padding: $pr-poliza-row-state-padding-y $pr-poliza-row-state-padding-x;
+        width: fit-content;
+        border-radius: $pr-poliza-row-state-radius;
+    }
+
+    .pr-poliza-row__estado--pending{
+        @include body($pr-poliza-row-pending-text);
+        background-color: $pr-poliza-row-pending;
+    }
+
+    .pr-poliza-row__estado--paid{
+        @include body($pr-poliza-row-paid-text);
+        background-color: $pr-poliza-row-paid;
+    }
+
+    .pr-poliza-row__estado--expired{
+        @include body($pr-poliza-row-expired-text);
+        background-color: $pr-poliza-row-expired;
+    }
+}

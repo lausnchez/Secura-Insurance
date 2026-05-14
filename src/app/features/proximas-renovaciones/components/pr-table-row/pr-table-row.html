@@ -1,0 +1,12 @@
+<tr class="pr-poliza-row" >
+    <td scope="col">{{poliza.policyNumber}}</td>
+    <td scope="col">{{poliza.name}}</td>
+    <td scope="col">{{this.toStringDateFormat(poliza.contractDate)}}</td>
+    <td scope="col">{{this.toStringDateFormat(poliza.endDate)}}</td>
+    <td scope="col" class="pr-poliza-row-highlight">{{poliza.amount | currency:'EUR'}}</td>
+    <td scope="col" class="pr-poliza-row__estado" [ngClass]="{
+        'pr-poliza-row__estado--pending': poliza.state == 'Pendiente',
+        'pr-poliza-row__estado--paid': poliza.state == 'Pagado',
+        'pr-poliza-row__estado--expired': poliza.state == 'Vencida',
+    }" appPolizaRowTag>{{poliza.state}}</td>
+</tr>

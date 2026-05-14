@@ -31,29 +31,8 @@
     </div>
     
     <table class="proximas-renovaciones__contents__tableContents">
-        <!-- <thead>
-            <tr>
-            <th scope="col">No. poliza</th>
-            <th scope="col">Nombre del riesgo</th>
-            <th scope="col">Fecha contrato</th>
-            <th scope="col">Fecha vencimiento</th>
-            <th scope="col">Importe</th>
-            <th scope="col">Estado</th>
-            </tr>
-        </thead> -->
         @for(poliza of this.renovationsService.paginatedRenovations(); track poliza.policyNumber){
-            <tr class="pr-poliza-row">
-                <td scope="col">{{poliza.policyNumber}}</td>
-                <td scope="col">{{poliza.name}}</td>
-                <td scope="col">{{this.toStringDateFormat(poliza.contractDate)}}</td>
-                <td scope="col">{{this.toStringDateFormat(poliza.endDate)}}</td>
-                <td scope="col" class="pr-poliza-row-highlight">{{poliza.amount | currency:'EUR'}}</td>
-                <td scope="col" class="pr-poliza-row__estado" [ngClass]="{
-                    'pr-poliza-row__estado--pending': poliza.state == 'Pendiente',
-                    'pr-poliza-row__estado--paid': poliza.state == 'Pagado',
-                    'pr-poliza-row__estado--expired': poliza.state == 'Vencida',
-                }" appPolizaRowTag>{{poliza.state}}</td>
-            </tr>
+            <pr-table-row [poliza]="poliza"></pr-table-row>
         }
     </table>
 </div>
