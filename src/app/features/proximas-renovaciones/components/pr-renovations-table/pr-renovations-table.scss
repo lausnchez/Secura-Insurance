@@ -6,6 +6,8 @@ $pr-contents-tableHeader-padding-y: $spacing-8;
 $pr-contents-tableHeader-padding-x: $spacing-16;
 $pr-contents-tableHeader-border-color: $color-border-border300;
 
+$pr-filter-chips-container-gap: toRem(12px);
+
 :host{
     display: block;
     width: 100%;
@@ -27,6 +29,7 @@ $pr-contents-tableHeader-border-color: $color-border-border300;
         @include body();
     }
 
+    
     .proximas-renovaciones__contents__tableContents{
         @include displayFlex(column, space-between, start);
         gap: toRem(24px);
@@ -34,5 +37,16 @@ $pr-contents-tableHeader-border-color: $color-border-border300;
         border-collapse: collapse;
         padding-bottom: toRem(20px);
         overflow: visible;
+    }
+}
+
+.pr__contents__filters__filter-list{
+    @include displayFlex($justify: start);
+    gap: toRem(12px);
+
+    .pr__contents__filters__filter-chips{
+        @include displayFlex(row, start, center);
+        gap: $pr-filter-chips-container-gap;
+        flex-wrap: wrap;
     }
 }

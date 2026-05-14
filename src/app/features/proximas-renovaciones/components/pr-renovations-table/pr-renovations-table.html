@@ -4,10 +4,14 @@
             <span class="icon-filter"></span>
             <span>Filtros</span>
         </app-btn-general>
-        <div class="pr__contents__filters__filter-chips"></div>
+        <div class="pr__contents__filters__filter-chips">
+            @for(filter of this.filterService.getFilters(); track filter.id){
+                <pr-filter-chip [filter]="filter"></pr-filter-chip>
+            }
+        </div>
     </div>
     <div class="pr__contents__filters__data">
-        <span>{{renovationsService.totalRenovations()}} pólizas</span>
+        <span>{{renovationsService.totalFilteredRenovations()}} pólizas</span>
         <div>
             <label for="ordenarpor">Ordenar por:</label>
             <select name="ordenarpor" id="select_ordenarPor" (change)="onOrderSelection($event)">

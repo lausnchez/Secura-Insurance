@@ -12,6 +12,8 @@ $btn-general-gap: $spacing-10;
     padding: $btn-general-padding-y $btn-general-padding-x;
     border-radius: $btn-general-border-radius;
     border: none;
+    width: fit-content;
+    box-sizing: border-box;
       
     &.white{
         background-color: white;

@@ -27,7 +27,7 @@ export class FilterManagement {
     this.filterList.set([]);
   }
 
-  updateFilter(filterID: string){
-
+  getFilters():Filter[]{
+    return this.filterList();
   }
 }

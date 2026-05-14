@@ -1,0 +1,55 @@
+{
+    "name": "Hyundai Ioniq 2021",
+    "number": "87961561",
+    "holderName": "Jose",
+    "holderSurname": "Martinez",
+    "CIF": "H58415862",
+    "address": "Casanova 18",
+    "policyState": "current",
+    "billingAddressInfo": {
+        "billingAddress": "Calle Luis",
+        "billingAddressNumber": 23,
+        "billingAddressCity": "Albacete",
+        "billingAddressPostalCode": "09876"
+    },
+    "payments": [
+        {
+            "date": "2023-01-15",
+            "period": "Q1 2023",
+            "amount": 2345,
+            "state": "pending"
+        },
+        {
+            "date": "2023-04-15",
+            "period": "Q2 2023",
+            "amount": 2345,
+            "state": "paid"
+        },
+        {
+            "date": "2023-07-15",
+            "period": "Q3 2023",
+            "amount": 2345,
+            "state": "pending"
+        }
+    ],
+    "paymentMethod": {
+        "name": "Grup Sisquella Serveis Professionals",
+        "CIF": "B5322984875",
+        "paymentType": "7 days",
+        "IBAN": "ES9121000418450200051332",
+        "bank": "Banco Sabadell"
+    },
+    "paymentAddress": {
+        "name": "Grup Sisquella Serveis Professionals",
+        "city": "Barcelona",
+        "postalCode": "08015",
+        "address": "Calle Mallorca",
+        "number": "245",
+        "addressNotes": "Planta 3, Oficina 5"
+    },
+    "contact": {
+        "email1": "jose.martinez@correo.com",
+        "meial2": "jose.martinez.work@correo.com",
+        "phone": "+34 612 345 678"
+    }
+}

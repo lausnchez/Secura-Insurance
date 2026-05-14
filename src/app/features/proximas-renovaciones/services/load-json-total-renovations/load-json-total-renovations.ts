@@ -14,7 +14,8 @@ export class LoadJsonTotalRenovations {
   renovationsData = signal<Poliza[]>([]); // Datos finales
   pageSize = signal<number>(5); // Elementos por página
   currentPage = signal<number>(0); // Número de página
-  totalRenovations = computed(()=> this.filteredRenovationsData().length); // Total de renovaciones
+  totalFilteredRenovations = computed(()=> this.filteredRenovationsData().length); // Total de renovaciones filtradas
+  totalRenovations = computed(()=>this.renovationsData().length);
 
   constructor(private http:HttpClient){
     this.loadRenovationsJson();

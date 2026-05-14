@@ -1,1 +1,4 @@
-<p>pr-filter-chip works!</p>
+<div class="pr-filter-chip">
+    <span>{{filter.value}}</span>
+    <span class="icon-close" (click)="this.filterService.removeFilter(filter.id)"></span>
+</div>

@@ -2,19 +2,20 @@ import { ModalService } from './../../services/modal-service/modal-service';
 import { Component, inject} from '@angular/core';
 import { LoadJsonTotalRenovations } from '../../services/load-json-total-renovations/load-json-total-renovations';
 import { BtnGeneral } from '../../../../shared/components/btn-general/btn-general';
-import { CurrencyPipe} from '@angular/common';
-import { PolizaRowTag } from '../../../../shared/directives/polizaRowTag/poliza-row-tag';
 import { PrTableRow } from '../pr-table-row/pr-table-row';
+import { PrFilterChip } from '../pr-filter-chip/pr-filter-chip';
+import { FilterManagement } from '../../services/filter-management/filter-management';
 
 @Component({
   selector: 'pr-renovations-table',
-  imports: [BtnGeneral, PrTableRow],
+  imports: [BtnGeneral, PrTableRow, PrFilterChip],
   templateUrl: './pr-renovations-table.html',
   styleUrl: './pr-renovations-table.scss',
 })
 export class PrRenovationsTable {
   renovationsService = inject(LoadJsonTotalRenovations);
   modalService = inject(ModalService);
+  filterService = inject(FilterManagement);
 
   onOrderSelection(event: Event){
     const element = event.target as HTMLSelectElement;

@@ -1,0 +1,21 @@
+@use 'styles/index' as *;
+
+// Variables
+$pr-filter-chip-gap: toRem(6px);
+$pr-filter-chip-padding-x: $spacing-16;
+$pr-filter-chip-padding-y: $spacing-4;
+$pr-filter-chip-border-radius: toRem(99px);
+$pr-filter-chip-bg-color: $color-base-primary;
+
+// styles
+.pr-filter-chip{
+    @include displayFlex(row, space-between, center);
+    @include body(white);
+    gap: $pr-filter-chip-gap;
+    background-color: $pr-filter-chip-bg-color;
+    width: fit-content;
+    padding: 
+        $pr-filter-chip-padding-y 
+        $pr-filter-chip-padding-x;
+    border-radius: $pr-filter-chip-border-radius;
+}

@@ -8,7 +8,7 @@
         <pr-renovations-table></pr-renovations-table>
         <mat-paginator 
             [pageSizeOptions]="[5, 10, 15, 20]"
-            [length]="renovationJsonInjection.totalRenovations()"
+            [length]="renovationJsonInjection.totalFilteredRenovations()"
             [pageSize]="renovationJsonInjection.pageSize()"
             [pageIndex]="renovationJsonInjection.currentPage()"
             (page) = "onPageChange($event)"
