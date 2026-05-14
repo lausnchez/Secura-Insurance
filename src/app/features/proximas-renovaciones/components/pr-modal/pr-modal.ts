@@ -32,13 +32,27 @@ export class PrModal {
   generateFilters(){
     const values = this.filterForm.getRawValue();
 
+    const toText = (value: unknown): string => {
+      if (value === null || value === undefined) {
+        return '';
+      }
+      return String(value).trim();
+    };
+
+    const numPoliza = toText(values.numPoliza);
+    const nombreRiesgo = toText(values.nombreRiesgo);
+    const fechaInicio = toText(values.fechaInicio);
+    const fechaFinal = toText(values.fechaFinal);
+    const importe = toText(values.importe);
+    const estado = toText(values.estado);
+
     const filters: Filter[] = [
-      values.numPoliza?.trim() ? { id: 'numPoliza', type: 'numPoliza', value: values.numPoliza } : null,
-      values.nombreRiesgo?.trim() ? { id: 'nombreRiesgo', type: 'nombreRiesgo', value: values.nombreRiesgo } : null,
-      values.fechaInicio ? { id: 'fechaInicio', type: 'fechaInicio', value: values.fechaInicio } : null,
-      values.fechaFinal ? { id: 'fechaFinal', type: 'fechaFinal', value: values.fechaFinal } : null,
-      values.importe?.trim() ? { id: 'importe', type: 'importe', value: values.importe } : null,
-      values.estado?.trim() ? { id: 'estado', type: 'estado', value: values.estado } : null,
+      numPoliza ? { id: 'numPoliza', type: 'numPoliza', value: numPoliza } : null,
+      nombreRiesgo ? { id: 'nombreRiesgo', type: 'nombreRiesgo', value: nombreRiesgo } : null,
+      fechaInicio ? { id: 'fechaInicio', type: 'fechaInicio', value: fechaInicio } : null,
+      fechaFinal ? { id: 'fechaFinal', type: 'fechaFinal', value: fechaFinal } : null,
+      importe ? { id: 'importe', type: 'importe', value: importe } : null,
+      estado ? { id: 'estado', type: 'estado', value: estado } : null,
     ].filter((filter): filter is Filter => filter !== null);
 
     this.filterService.setFilters(filters);

@@ -30,7 +30,7 @@ export class LoadJsonTotalRenovations {
 
       switch (type) {
         case 'numPoliza':
-          return currentData.filter(poliza => poliza.policyNumber.toString().includes(normalizedValue));
+          return currentData.filter(poliza => poliza.policyNumber.toString().startsWith(normalizedValue));
         case 'nombreRiesgo':
           return currentData.filter(poliza => poliza.name.toLowerCase().includes(normalizedValue));
         case 'fechaInicio':
