@@ -1,0 +1,10 @@
+@use 'styles/index' as *;
+
+.detalle-poliza{
+    @include displayFlex(column, start, start);
+    gap: toRem(48px);
+
+    >*{
+        width: 100%;
+    }
+}

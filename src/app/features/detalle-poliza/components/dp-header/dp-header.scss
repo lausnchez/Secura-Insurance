@@ -1,0 +1,51 @@
+@use 'styles/index' as *;
+
+$dp-header-background-color: white;
+$dp-header-padding-x: toRem(88px);
+$dp-header-padding-y: toRem(32px);
+$dp-header-border-bottom-color: #B7CBD3;
+$dp-header-gap: toRem(40px);
+
+$dp-header-breadcrumbs-gap: toRem(8px);
+
+$dp-header-pageInfo-gap: toRem(4px);
+
+:host{
+    display: block;
+    width: 100%;
+}
+
+.detalle-poliza__header{
+    @include displayFlex(column, start, start);
+    background-color: $dp-header-background-color;
+    padding: 
+        $dp-header-padding-y 
+        $dp-header-padding-x;
+    box-sizing: border-box;
+    border-bottom: 1px solid $dp-header-border-bottom-color;
+    gap: $dp-header-gap;
+    
+    
+    .detalle-poliza__header__breadcrumbs{
+        @include displayFlex(row, start, center);
+        gap: $dp-header-breadcrumbs-gap;
+    }
+
+    .breadcrumb--title{
+        @include body($color-base-primary);
+    }
+
+    .detalle-poliza__header__pageinfo{
+        @include displayFlex(column, start, start);
+        gap: $dp-header-pageInfo-gap;
+
+        h2{
+            @include subtitle($color-text-title);
+            height: toRem(40px);
+        }
+
+        span{
+            @include body($color-text-label);
+        }
+    }
+}
