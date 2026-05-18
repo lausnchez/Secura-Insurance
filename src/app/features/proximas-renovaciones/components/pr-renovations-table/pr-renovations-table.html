@@ -11,8 +11,13 @@
         </div>
     </div>
     <div class="pr__contents__filters__data">
-        <span>{{renovationsService.totalFilteredRenovations()}} pólizas</span>
-        <div>
+        <div class="pr__contents__filters__data__mainData">
+            <span>{{renovationsService.totalFilteredRenovations()}} pólizas</span>
+            |
+            <span>{{this.filterService.getFilters().length}} filtros aplicados</span>
+            <a (click)="this.filterService.clearAllFilters()">Borrar filtros</a>
+        </div>
+        <div class="pr__contents__filters__data__orderBy">
             <label for="ordenarpor">Ordenar por:</label>
             <select name="ordenarpor" id="select_ordenarPor" (change)="onOrderSelection($event)">
                 <option value="numPoliza">Número de póliza</option>

@@ -38,7 +38,8 @@ export class LoadJsonTotalRenovations {
         case 'fechaFinal':
           return currentData.filter(poliza => poliza.endDate.getTime() <= new Date(value).getTime());
         case 'importe':
-          return currentData.filter(poliza => poliza.amount.toString().includes(normalizedValue));
+          return currentData.filter(poliza => poliza.amount > parseFloat(normalizedValue));
+          // return currentData.filter(poliza => poliza.amount.toString().includes(normalizedValue));
         case 'estado':
           return currentData.filter(poliza => poliza.state.toLowerCase().includes(normalizedValue));
         default:

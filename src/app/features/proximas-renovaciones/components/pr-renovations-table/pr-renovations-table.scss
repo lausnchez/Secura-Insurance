@@ -6,6 +6,8 @@ $pr-contents-tableHeader-padding-y: $spacing-8;
 $pr-contents-tableHeader-padding-x: $spacing-16;
 $pr-contents-tableHeader-border-color: $color-border-border300;
 
+$pr-contents-filtersData-gap: toRem(16px);
+
 $pr-filter-chips-container-gap: toRem(12px);
 
 :host{
@@ -40,6 +42,11 @@ $pr-filter-chips-container-gap: toRem(12px);
     }
 }
 
+.proximas-renovaciones__contents__filters{
+    @include displayFlex(column, start, start);
+    gap: toRem(24px);
+}
+
 .pr__contents__filters__filter-list{
     @include displayFlex($justify: start);
     gap: toRem(12px);
@@ -48,5 +55,28 @@ $pr-filter-chips-container-gap: toRem(12px);
         @include displayFlex(row, start, center);
         gap: $pr-filter-chips-container-gap;
         flex-wrap: wrap;
+    }
+}
+
+.pr__contents__filters__data{
+    @include displayFlex(row, space-between, center);
+    width: 100%;
+    margin-bottom: toRem(40px);
+
+    .pr__contents__filters__data__mainData{
+        color: $color-border-border300;
+
+        span{
+            @include bodyBold();
+        }
+
+        a{
+            @include bodyBold($color-base-primary);
+        }
+    }
+
+    div{
+        @include displayFlex(row);
+        gap: $pr-contents-filtersData-gap;
     }
 }
