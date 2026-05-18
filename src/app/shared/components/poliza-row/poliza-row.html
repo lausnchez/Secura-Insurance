@@ -1,4 +1,4 @@
-<div class="poliza-row" ngClass="estado">
+<div class="poliza-row" ngClass="estado" [routerLink]="['/detalle-poliza', poliza.policyNumber]">
     <div>
         <span class="poliza-row-title">No. de póliza</span>
         <span class="poliza-row__no-poliza">{{poliza.policyNumber}}</span>
